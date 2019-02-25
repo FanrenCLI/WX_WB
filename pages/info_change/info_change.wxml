@@ -1,0 +1,6 @@
+<view class="weui-cell">
+        <input type="text" placeholder="请输入修改信息" bindinput="change_info_input" />
+        <text class="change_info_text" bindtap="save_info">
+            保存
+        </text>
+</view>

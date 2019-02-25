@@ -1,0 +1,46 @@
+<swiper indicator-dots="true" autoplay="true" interval="3000" duration="500" circular="true" indicator-active-color="#FFF" indicator-color="rgba(255,255,255, .4)">
+  <swiper-item>
+    <image src="/image/b1.jpg" class='img_ins'></image>
+  </swiper-item>
+  <swiper-item>
+    <image src="/image/b2.png" class='img_ins'></image>
+  </swiper-item>
+  <!-- <block wx:for="{{bgimg}}" wx:key="*this">
+    <navigator url="#">
+      <swiper-item>
+        <image src="#" class='img_ins'></image>
+      </swiper-item>
+    </navigator>
+  </block> -->
+</swiper>
+<view class='center_table'>
+  <view wx:for="{{index_list}}" wx:key="{{item.id}}" style="{{'display:'+item.dis}}" class='center_td'>
+    <navigator url="{{item.url}}">
+      <view class='td_img'>
+        <image src="{{'/image/'+item.img}}" class='imgs_ico'></image>
+      </view>
+      <view class='td_text'>{{item.name}}</view>
+    </navigator>
+  </view>
+</view>
+
+  <view class="func-area">
+    <view bindtap="showCategories">
+      <image src="/image/xiaoyuan.jpg" mode="aspectFill" class="" />
+      <text>校园趣事</text>
+    </view>
+    <view bindtap="showOrders">
+      <image src="/image/zuixin.jpg" mode="aspectFill" class="bue" />
+      <text>最新通知</text>
+    </view>
+  </view>
+  <view class="func-area">
+    <view bindtap="showCategories">
+      <image src="/image/tuiwen.jpg" mode="aspectFill" class="" />
+      <text>推文作品</text>
+    </view>
+    <view bindtap="showOrders">
+      <image src="/image/meiri.jpg" mode="aspectFill" class="" />
+      <text>每日一课</text>
+    </view>
+  </view>

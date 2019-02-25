@@ -1,0 +1,7 @@
+<!--pages/search/search.wxml-->
+<view wx:for="{{search_list}}">
+  <navigator url="{{item.url}}" open-type="navigate" class="upl uploader-text">
+      <text>{{item.name}}</text>
+      <text class='right'>> </text>
+  </navigator>
+</view>

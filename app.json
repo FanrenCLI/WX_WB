@@ -1,12 +1,41 @@
 {
-  "pages":[
+  "pages": [
+    "pages/search/search",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/main/main",
+    "pages/usercenter/usercenter",
+    "pages/info_change/info_change",
+    "pages/search_fun/search_fun",
+    "pages/search_fun/lesson"
+
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "登陆页面",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/main/main",
+        "text": "主页",
+        "iconPath": "image/main.png",
+        "selectedIconPath": "image/main_s.png"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "text": "信息查询",
+        "iconPath": "image/search.png",
+        "selectedIconPath": "image/search_s.png"
+      },
+      {
+        "pagePath": "pages/usercenter/usercenter",
+        "text": "个人中心",
+        "iconPath": "image/user.png",
+        "selectedIconPath": "image/user_s.png"
+      }
+    ]
   }
 }

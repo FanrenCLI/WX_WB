@@ -1,0 +1,14 @@
+/* pages/info_change/info_change.wxss */
+
+.change_info_text{
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    text-align: right;
+    color: rgb(0, 177, 24);
+}
+input {
+    border-bottom: 1px rgb(0, 177, 24) solid;
+    width: 80%;
+    
+}

@@ -1,0 +1,106 @@
+<!-- pages/search_fun/search_fun.wxml -->
+<block wx:if="{{choose==1}}">
+    <view class="con-wrap ripple {{cardRightIn?'fadeInRight':''}} {{cardLeftIn?'fadeInLeft':''}}" wx:for="{{week_kecheng}}" wx:if="{{index==currentIndex}}" wx:key="{{item._id}}">
+        <view class='card-box'>
+            <view class="top">
+                <view class="top-text">
+                    <view>
+                        <view>节次</view>
+                    </view>
+                </view>
+                <view wx:for="{{item.week_day}}" class="top-text">
+                    <view>
+                        <view>{{item.week}}</view>
+                    </view>
+                </view>
+            </view>
+            <view style="height:100%;width:730rpx;display:flex;">
+                <view style="background-color:#f8f8f8;color:#666666;">
+                    <view wx:for="{{times}}" class="left {{item.class2}}">{{item.name}}</view>
+                </view>
+                <!-- 课表 -->
+                <view wx:for="{{item.sw_kc}}">
+                    <view class="flex-item kcb-item {{item.bg}}" bindtap="showCardView" data-statu="open" style="margin-left:{{(item.xqj-1)*125+10}}rpx;margin-top:{{(item.skjc-1)*104+5}}rpx;height:{{item.skcd*100-10}}rpx;">
+                        <navigator url='lesson'>
+                            <view class="smalltext">{{item.kcmc}}</view>
+                        </navigator>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+<block wx:if="{{choose==2}}">
+    <view>
+        <view class="weui-cells">
+            
+            <view class="weui-cell" >
+                <view class="weui-cell__ft" style="margin-left:20%">平时</view>
+                <view class="weui-cell__ft" style="margin-left:15%">考试</view>
+                <view class="weui-cell__ft" style="margin-left:15%">综合</view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__ft" style="color:#000000" >
+                    <text>英语</text>
+                </view>
+                <view class="weui-cell__ft" style="margin-left:10%">80</view>
+                <view class="weui-cell__ft" style="margin-left:20%">90</view>
+                <view class="weui-cell__ft" style="margin-left:20%">91</view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__ft" style="color:#000000">
+                    <text>高数</text>
+                </view>
+                <view class="weui-cell__ft">{{}}</view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__ft" style="color:#000000">
+                    <text>化学</text>
+                </view>
+                <view class="weui-cell__ft">{{}}</view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__ft" style="color:#000000">
+                    <text>物理</text>
+                </view>
+                <view class="weui-cell__ft">{{}}</view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__ft" style="color:#000000">
+                    <text>政治</text>
+                </view>
+                <view class="weui-cell__ft">{{}}</view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__ft" style="color:#000000">
+                    <text>马概</text>
+                </view>
+                <view class="weui-cell__ft">{{}}</view>
+            </view>
+            <view class="weui-cell" >
+                <view class="weui-cell__ft" style="color:#000000">
+                    <text>毛概</text>
+                </view>
+                <view class="weui-cell__ft">{{}}</view>
+            </view>
+            <view class="weui-cell" >
+                <view class="weui-cell__ft" style="color:#000000">
+                    <text>地理</text>
+                </view>
+                <view class="weui-cell__ft">{{}}</view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__ft" style="color:#000000">
+                    <text>C#</text>
+                </view>
+                <view class="weui-cell__ft">{{}}</view>
+            </view>
+        </view>
+    </view>
+</block>
+<block wx:if="{{choose==3}}">
+    
+</block>
+<block wx:if="{{choose==4}}">44444</block>
+<block wx:if="{{choose==5}}">55555</block>
+<block wx:if="{{choose==6}}">66666</block>
