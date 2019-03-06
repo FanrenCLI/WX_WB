@@ -8,16 +8,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-    name: app.globalData.name,
-    ID: app.globalData.ID,
-    sex: app.globalData.sex,
-    stu_id: app.globalData.stu_id,
-    department: app.globalData.department,
-    major: app.globalData.major,
-    class: app.globalData.class,
-    tel: app.globalData.tel,
-    qq: app.globalData.qq,
-    wx: app.globalData.wx
+    name: "",
+    ID: "",
+    sex: "",
+    stu_id: "",
+    department:"",
+    major: "",
+    class:"",
+    tel: "",
+    qq: "",
+    wx: ""
   },
 
   change_tel: function (e) {
@@ -44,7 +44,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // this.data.name=app.globalData.name;
+    // this.data.ID= app.globalData.ID,
+    // this.data.sex= app.globalData.sex,
+    // this.data.stu_id= app.globalData.stu_id,
+    // this.data.department= app.globalData.department,
+    // this.data.major=app.globalData.major,
+    // this.data.class= app.globalData.class,
+    // this.data.tel= app.globalData.tel,
+    // this.data.qq= app.globalData.qq,
+    // this.data.wx= app.globalData.wx
   },
 
   /**
@@ -58,18 +67,18 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    // this.setData({
-    //   name: app.globalData.name,
-    //   ID: app.globalData.ID,
-    //   sex: app.globalData.sex,
-    //   stu_id: app.globalData.stu_id,
-    //   department: app.globalData.department,
-    //   major: app.globalData.major,
-    //   class: app.globalData.class,
-    //   tel: app.globalData.tel,
-    //   qq: app.globalData.qq,
-    //   wx: app.globalData.wx
-    // })
+    this.setData({
+      name: app.globalData.name,
+      ID: app.globalData.ID,
+      sex: app.globalData.sex,
+      stu_id: app.globalData.stu_id,
+      department: app.globalData.department,
+      major: app.globalData.major,
+      class: app.globalData.class,
+      tel: app.globalData.tel,
+      qq: app.globalData.qq,
+      wx: app.globalData.wx
+    })
   },
 
   /**

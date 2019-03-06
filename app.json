@@ -4,10 +4,10 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/main/main",
-    "pages/usercenter/usercenter",
     "pages/info_change/info_change",
     "pages/search_fun/search_fun",
-    "pages/search_fun/lesson"
+    "pages/search_fun/lesson",
+    "pages/usercenter/usercenter"
 
   ],
   "window": {

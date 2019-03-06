@@ -4,7 +4,7 @@
             <view class="weui-label">课程名称</view>
         </view>
         <view class="weui-cell__bd">
-            <input class="weui-input" value='语文' />
+            <input class="weui-input" value='{{kcmc}}' />
         </view>
     </view>
     <view class="weui-cell weui-cell_input" style="height:80rpx">
@@ -12,7 +12,7 @@
             <view class="weui-label">课程地点</view>
         </view>
         <view class="weui-cell__bd">
-            <input class="weui-input" placeholder='主教楼' />
+            <view class="weui-input">{{skdd}}</view>
         </view>
     </view>
     <view class="weui-cell weui-cell_input" style="height:80rpx">
@@ -20,7 +20,7 @@
             <view class="weui-label">课程时间</view>
         </view>
         <view class="weui-cell__bd">
-            <input class="weui-input" value='星期三' />
+            <view class="weui-input">{{week_time}}</view>
         </view>
     </view>
     <view class="weui-cell weui-cell_input" style="height:80rpx">
@@ -28,7 +28,7 @@
             <view class="weui-label">课程老师</view>
         </view>
         <view class="weui-cell__bd">
-            <input class="weui-input" value='张老师' />
+            <view class="weui-input">{{teacher}}</view>
         </view>
     </view>
     <view class="weui-cell weui-cell_input" style="height:80rpx">
@@ -36,7 +36,7 @@
             <view class="weui-label">周次</view>
         </view>
         <view class="weui-cell__bd">
-            <input class="weui-input" value='1-10' />
+            <view class="weui-input">{{zhouci}}</view>
         </view>
     </view>
     <view class="weui-cell weui-cell_input" style="height:80rpx">
@@ -44,7 +44,7 @@
             <view class="weui-label">节次</view>
         </view>
         <view class="weui-cell__bd">
-            <input class="weui-input" value='3-6' />
+            <view class="weui-input">{{day_time}}</view>
         </view>
     </view>
 </view>

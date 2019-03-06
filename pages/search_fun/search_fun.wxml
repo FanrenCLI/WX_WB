@@ -19,10 +19,13 @@
                     <view wx:for="{{times}}" class="left {{item.class2}}">{{item.name}}</view>
                 </view>
                 <!-- 课表 -->
-                <view wx:for="{{item.sw_kc}}">
-                    <view class="flex-item kcb-item {{item.bg}}" bindtap="showCardView" data-statu="open" style="margin-left:{{(item.xqj-1)*125+10}}rpx;margin-top:{{(item.skjc-1)*104+5}}rpx;height:{{item.skcd*100-10}}rpx;">
-                        <navigator url='lesson'>
+                <view wx:for="{{sw_kc}}">
+                    <view class="flex-item kcb-item {{item.bg}}" data-statu="open" style="margin-left:{{(item.xqj-1)*125+10}}rpx;margin-top:{{(item.skjc-1)*104+5}}rpx;height:{{item.skcd*100-10}}rpx;">
+                        <navigator url='lesson?kcmc={{item.kcmc}}&skdd={{item.skdd}}&teacher={{item.teacher}}&week_time={{item.xqj}}&day_time={{item.skjc}}-{{item.skjc+item.skcd-1}}&zhouci={{item.zhouci}}'>
                             <view class="smalltext">{{item.kcmc}}</view>
+                            <view class="smalltext">{{item.skdd}}</view>
+                            <view class="smalltext">{{item.skjc}}-{{item.skjc+item.skcd-1}}周</view>
+                            <view class="smalltext">{{item.teacher}}</view>
                         </navigator>
                     </view>
                 </view>
@@ -31,76 +34,106 @@
     </view>
 </block>
 <block wx:if="{{choose==2}}">
-    <view>
-        <view class="weui-cells">
-            
-            <view class="weui-cell" >
-                <view class="weui-cell__ft" style="margin-left:20%">平时</view>
-                <view class="weui-cell__ft" style="margin-left:15%">考试</view>
-                <view class="weui-cell__ft" style="margin-left:15%">综合</view>
-            </view>
-            <view class="weui-cell">
-                <view class="weui-cell__ft" style="color:#000000" >
-                    <text>英语</text>
-                </view>
-                <view class="weui-cell__ft" style="margin-left:10%">80</view>
-                <view class="weui-cell__ft" style="margin-left:20%">90</view>
-                <view class="weui-cell__ft" style="margin-left:20%">91</view>
-            </view>
-            <view class="weui-cell">
-                <view class="weui-cell__ft" style="color:#000000">
-                    <text>高数</text>
-                </view>
-                <view class="weui-cell__ft">{{}}</view>
-            </view>
-            <view class="weui-cell">
-                <view class="weui-cell__ft" style="color:#000000">
-                    <text>化学</text>
-                </view>
-                <view class="weui-cell__ft">{{}}</view>
-            </view>
-            <view class="weui-cell">
-                <view class="weui-cell__ft" style="color:#000000">
-                    <text>物理</text>
-                </view>
-                <view class="weui-cell__ft">{{}}</view>
-            </view>
-            <view class="weui-cell">
-                <view class="weui-cell__ft" style="color:#000000">
-                    <text>政治</text>
-                </view>
-                <view class="weui-cell__ft">{{}}</view>
-            </view>
-            <view class="weui-cell">
-                <view class="weui-cell__ft" style="color:#000000">
-                    <text>马概</text>
-                </view>
-                <view class="weui-cell__ft">{{}}</view>
-            </view>
-            <view class="weui-cell" >
-                <view class="weui-cell__ft" style="color:#000000">
-                    <text>毛概</text>
-                </view>
-                <view class="weui-cell__ft">{{}}</view>
-            </view>
-            <view class="weui-cell" >
-                <view class="weui-cell__ft" style="color:#000000">
-                    <text>地理</text>
-                </view>
-                <view class="weui-cell__ft">{{}}</view>
-            </view>
-            <view class="weui-cell">
-                <view class="weui-cell__ft" style="color:#000000">
-                    <text>C#</text>
-                </view>
-                <view class="weui-cell__ft">{{}}</view>
-            </view>
+    <view class="table1">
+        <view class="tr1 bg-w1">
+            <view class="th1">科目</view>
+            <view class="th1">平时成绩</view>
+            <view class="th1">考试成绩</view>
+            <view class="th1">综合成绩</view>
         </view>
+        <block wx:for="{{curr}}" wx:for-index="idx">
+            <view class="tr1">
+                <view class="td1">{{curr[idx]}}</view>
+                <view class="td1">{{grade[idx*3]}}</view>
+                <view class="td1">{{grade[idx*3+1]}}</view>
+                <view class="td1">{{grade[idx*3+2]}}</view>
+            </view>
+        </block>
     </view>
 </block>
 <block wx:if="{{choose==3}}">
-    
+    <view class="LJheader">
+        <input class="LJinput" type="text" placeholder="请输入考勤码"/>
+        <button class="LJtext" type="warn"  bindtap="onTap">
+            开始考勤
+        </button>
+    </view>
+    <view class="table1">
+        <view class="tr1 bg-w1">
+            <view class="th1">学号</view>
+            <view class="th1">姓名</view>
+            <view class="th1">课程名称</view>
+            <view class="th1">日期</view>
+        </view>
+        <block wx:for="{{attendInfo}}" wx:for-item="item">
+            <view class="tr1">
+                <view class="td1">{{item.studentId}}</view>
+                <view class="td1">{{item.studentName}}</view>
+                <view class="td1">{{item.className}}</view>
+                <view class="td1">{{item.time}}</view>
+            </view>
+        </block>
+    </view>
 </block>
-<block wx:if="{{choose==4}}">44444</block>
+<block wx:if="{{choose==4}}">
+    <view class='menu-po'>
+        <!-- 导航栏 -->
+        <view class='menu'>
+            <view class='menu-list'>
+                <view class='menu-nav'  data-hi="0" bindtap="menuClick">
+                    <text class='menu-text'>查询条件</text>
+                    <image class='menu-image' src='../../image/arrow.png'></image>
+                </view>
+                <input type="text" placeholder="输入院系或名称" value="{{majorInfo}}" bindinput="Infoinput" />
+                <view class="aa" bindtap="getTeacherInfo">查询</view>
+            </view>
+        </view>
+        <!-- 列表栏 -->
+        <view class='menu-if'>
+            <view class="meun-txt" hidden='{{ meunShow[0].isShows ? true : false }}'>
+                <view class='menu-text-list'>
+                    <view class='menu-text-list-left over-auto'>
+                        <text wx:for="{{ areaLise }}" wx:key="name" class='meun-city-txt' bindtap="rowClick" data-hi="{{ index }}">{{ item.name }}
+                        </text>
+                    </view>
+                    <view class='menu-text-list-rig over-auto' hidden='{{ rigShow ? true : fasle }}'>
+                        <view class="menu-city" wx:for="{{rowLise}}" wx:for-index="index_1" hidden='{{ rowShow[index_1].isShows ? true : fasle }}'>
+                            <text wx:for="{{ item.name }}" class='meun-city-txt' wx:for-index="idx" bindtap="InputInfo" data-major="{{rowLise[index_1].name[idx]}}">{{rowLise[index_1].name[idx] }}
+                            </text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <scroll-view scroll-x style="width:100%">
+        <view class="table2">
+            <view class="tr2 bg-w2">
+                <view class="th2">教师号</view>
+                <view class="th2">姓名</view>
+                <view class="th2">性别</view>
+                <view class="th2">学历</view>
+                <view class="th2">专业</view>
+                <view class="th2">教授课程</view>
+                <view class="th2">电话</view>
+                <view class="th2">邮箱</view>
+                <view class="th2">QQ</view>
+            </view>
+            <block wx:for="{{teacherinfo}}" wx:for-index="idx" wx:for-item="item">
+                <view class="tr2">
+                    <view class="td2">{{item.teacherId}}</view>
+                    <view class="td2">{{item.name}}</view>
+                    <view class="td2">{{item.sex}}</view>
+                    <view class="td2">{{item.degree}}</view>
+                    <view class="td2">{{item.department}}</view>
+                    <view class="td2">{{item.teachCurriculum}}</view>
+                    <view class="td2">{{item.phone}}</view>
+                    <view class="td2">{{item.email}}</view>
+                    <view class="td2">{{item.qq}}</view>
+                </view>
+            </block>
+        </view>
+    </scroll-view>
+</block>
 <block wx:if="{{choose==5}}">55555</block>
 <block wx:if="{{choose==6}}">66666</block>

@@ -16,7 +16,7 @@
                 <button type="primary" open-type="getUserInfo" bindtap="login_in">登录</button>
             </view>
             <view class="btn-area">
-                <button type="primary" bindtaap="login_in">微信登录</button>
+                <button type="primary" bindtap="login_in">微信登录</button>
             </view>
             <view class="btn-area">
                 <button type="default">忘记密码</button>

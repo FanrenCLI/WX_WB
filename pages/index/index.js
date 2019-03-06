@@ -54,7 +54,6 @@ Page({
                                     }
                                     wx.hideToast({
                                         success: () => {
-                                            console.log("ok")
                                         }
                                     });
                                     wx.switchTab({
@@ -66,7 +65,6 @@ Page({
                         fail() {
                             wx.hideToast({
                                 success: () => {
-                                    console.log("ok")
                                 }
                             });
                         }
@@ -77,7 +75,6 @@ Page({
     },
     login_in: function (e) {
         var that = this;
-        //console.log("this is login in ");
         wx.showToast({
             title: "登录请求中",
             icon: "loading"
@@ -91,7 +88,6 @@ Page({
             success(res) {
                 if (res.code) {
                     // 发起网络请求
-                    //console.log(app.globalData.mainurl + 'login');
                     wx.request({
                         url: app.globalData.mainurl + 'login',
                         method: "POST",
@@ -104,23 +100,31 @@ Page({
                             pwd: that.data.pwd
                         },
                         success: function (res) {
-                            if (res.data.status == "true") {
+                            console.log(res);
+                            if (res.data.status_1 == "true") {
                                 app.globalData.name = res.data.name
-                                app.globalData.ID = res.data.ID
+                                app.globalData.ID = res.data.id
                                 app.globalData.sex = res.data.sex
-                                app.globalData.stu_id = res.data.stu_id
+                                app.globalData.stu_id = res.data.stuid
                                 app.globalData.department = res.data.department
                                 app.globalData.major = res.data.major
                                 app.globalData.class = res.data.classes
                                 app.globalData.tel = res.data.tel
                                 app.globalData.qq = res.data.qq
                                 app.globalData.wx = res.data.wx
+                                console.log(app.globalData.name);
                                 that.getUserInfomation();
+                            }else{
+                                wx.showToast({
+                                    title: '登录失败',
+                                    icon: 'none',
+                                    duration: 2000
+                                  })
                             }
                         },
                         fail(res) {
                             console.log("请求失败")
-                            that.getUserInfomation();
+                            //that.getUserInfomation();
                         }
                     })
                 } else {

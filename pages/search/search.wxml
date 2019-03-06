@@ -1,6 +1,6 @@
 <!--pages/search/search.wxml-->
 <view wx:for="{{search_list}}">
-  <navigator url="{{item.url}}" open-type="navigate" class="upl uploader-text">
+  <navigator url="{{item.url}}" open-type="navigate" class="upl uploader-text" bindtap="{{item.func}}" >
       <text>{{item.name}}</text>
       <text class='right'>> </text>
   </navigator>
