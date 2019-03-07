@@ -1,0 +1,142 @@
+
+  /* pages/headLine/headLine.wxss */
+  page{
+      background-color: rgba(156, 156, 156, 0.082)
+  }
+  .headLine {
+    width: 95%;
+    margin-left: 7px;
+  }
+  
+  .headLineWra {
+    height: 160rpx;
+    width: 100%;
+    border: 5rpx solid rgba(12, 93, 243, 0.253);
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: rgba(255, 0, 0, 0.041);
+  }
+  
+  .headLineContent {
+    width: 80%;
+    height: 100%;
+  }
+  
+  .headLineTitle {
+    width: 90%;
+    height: 86rpx;
+    line-height: 46rpx;
+    font-weight: 700;
+    font-size: 32rpx;
+    overflow:hidden; 
+    display:-webkit-box;
+  }
+  
+  .headLineInfor {
+    width: 90%;
+    height: 20%;
+    font-size: 26rpx;
+    color: #666;
+  }
+  
+  .arrowsBox {
+    width: 20%;
+    height: 100%;
+  }
+  .userinfo-avatar {  
+    overflow:hidden;  
+    display: block;  
+    width: 120rpx;  
+    height: 120rpx; 
+    border-radius: 50%;  
+    border: 2px solid #fff;  
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);  
+  }
+  .arrowsBox image {
+    width: 90rpx;
+    height: 90rpx;
+    /*padding-left: 50rpx;*/
+  }
+  
+  .moreButton {
+    margin-top: 20rpx;
+    width: 100%;
+    height:40rpx;
+    text-align: center;
+    /*line-height: 80rpx;*/
+    font-size: 28rpx;
+    color: rgb(0, 0, 0)
+  }
+  /*伸缩盒子模型*/
+  .box {
+      display: flex; /* 新版本语法: Opera 12.1, Firefox 22+ */
+      -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  }
+  
+  /*从左至右*/
+  
+  .box-lr {
+      -webkit-box-direction: normal;
+      -webkit-box-orient: horizontal;
+      -moz-flex-direction: row;
+      -webkit-flex-direction: row;
+      flex-direction: row;
+  }
+  
+  
+  
+  
+  /*从上至下*/
+  
+  .box-tb {
+      -webkit-box-direction: normal;
+      -webkit-box-orient: vertical;
+      -moz-flex-direction: column;
+      -webkit-flex-direction: column;
+      flex-direction: column;
+  }
+  
+
+  
+  
+  /*主轴居中*/
+  
+  .box-pack-center {
+      -webkit-box-pack: center;
+      -moz-justify-content: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+  }
+  
+  
+  /*主轴左右不留白*/
+  
+  .box-pack-between {
+      -webkit-box-pack: justify;
+      -moz-justify-content: space-between;
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+  }
+  
+  
+  /*主轴左右留白*/
+  
+  .box-pack-around {
+      -moz-justify-content: space-around;
+      -webkit-justify-content: space-around;
+      justify-content: space-around;
+  }
+  
+  
+  /*交叉轴居中对齐*/
+  
+  .box-align-center {
+      -webkit-box-align: center;
+      -moz-align-items: center;
+      -webkit-align-items: center;
+      align-items: center;
+  }
+  
+  

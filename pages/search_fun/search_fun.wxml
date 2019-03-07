@@ -53,10 +53,9 @@
 </block>
 <block wx:if="{{choose==3}}">
     <view class="LJheader">
-        <input class="LJinput" type="text" placeholder="请输入考勤码"/>
-        <button class="LJtext" type="warn"  bindtap="onTap">
-            开始考勤
-        </button>
+        <input class="LJinput" type="text" placeholder="考勤码" bindinput="stu_attend1" />
+        <input class="LJinput" type="text" placeholder="课程名称" bindinput="stu_attend2" />
+        <button class="LJtext" type="warn" bindtap="begin_attend">考勤</button>
     </view>
     <view class="table1">
         <view class="tr1 bg-w1">
@@ -80,7 +79,7 @@
         <!-- 导航栏 -->
         <view class='menu'>
             <view class='menu-list'>
-                <view class='menu-nav'  data-hi="0" bindtap="menuClick">
+                <view class='menu-nav' data-hi="0" bindtap="menuClick">
                     <text class='menu-text'>查询条件</text>
                     <image class='menu-image' src='../../image/arrow.png'></image>
                 </view>
@@ -135,5 +134,25 @@
         </view>
     </scroll-view>
 </block>
-<block wx:if="{{choose==5}}">55555</block>
-<block wx:if="{{choose==6}}">66666</block>
+<block wx:if="{{choose==5}}">
+    <scroll-view scroll-x style="width:100%">
+        <view class="table3">
+            <view class="tr3 bg-w3">
+                <view class="th3">考试课程</view>
+                <view class="th3">考试时间</view>
+                <view class="th3">考试地点</view>
+                <view class="th3">监考老师</view>
+                <view class="th3">考试班级</view>
+            </view>
+            <block wx:for="{{examInfo}}" wx:for-index="idx" wx:for-item="item">
+                <view class="tr3">
+                    <view class="td3">{{item.name}}</view>
+                    <view class="td3">{{item.time}}</view>
+                    <view class="td3">{{item.place}}</view>
+                    <view class="td3">{{item.teacher}}</view>
+                    <view class="td3">{{item.classes}}</view>
+                </view>
+            </block>
+        </view>
+    </scroll-view>
+</block>

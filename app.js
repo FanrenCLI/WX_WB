@@ -39,8 +39,6 @@ App({
         sw_kc:[],
         grade:[],
         curr:[],
-        college:[],
-        major:[],
     }
     
 })

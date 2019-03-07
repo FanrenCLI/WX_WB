@@ -33,7 +33,7 @@ Page({
       "id": 4,
       "dis": ''
     }, {
-      "url": "quary/bukao",
+      "url": "../main_detail/discussion/discussion",
       "img": "shequ.png",
       "name": '社区讨论',
       "id": 5,

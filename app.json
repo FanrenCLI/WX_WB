@@ -1,15 +1,21 @@
 {
   "pages": [
-    "pages/search/search",
+    "pages/main/main",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/main/main",
     "pages/info_change/info_change",
     "pages/search_fun/search_fun",
     "pages/search_fun/lesson",
-    "pages/usercenter/usercenter"
-
+    "pages/search/search",
+    "pages/usercenter/usercenter",
+    "pages/main_detail/discussion/discussion",
+    "pages/main_detail/learnVideo/learnVideo"
   ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用考勤服务"
+    }
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#000",

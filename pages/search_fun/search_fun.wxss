@@ -139,6 +139,38 @@ page {
   align-items: center;
 }
 /* =========================================================== */
+/* =========================================================== */
+.table3 {
+  border: 0px solid darkgray;
+  font-size: 12px;
+  width: 30rem;
+}
+.tr3 {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 2rem;
+  align-items: center;
+}
+.td3 {
+    width:40%;
+    justify-content: center;
+    text-align: center;
+}
+.bg-w3{
+  background: snow;
+}
+ 
+.th3{
+  width: 40%;
+  justify-content: center;
+  background: rgba(1, 160, 252, 0.726);
+  color: #fff;
+  display: flex;
+  height: 2rem;
+  align-items: center;
+}
+/* =========================================================== */
 .menu-po{
   position: relative;
   left: 0;
@@ -231,7 +263,7 @@ page {
 .menu-list input{
   width: 55%;
   background-color: #ffffff;
-  margin-top:8px;
+  margin-top:10px;
   font-size: 13px;
 }
 
@@ -241,7 +273,7 @@ page {
   width: 40px;
   line-height: 24px;
   font-size: 14px;
-  color: rgba(4, 165, 25, 0.658);
+  color: rgba(8, 168, 2, 0.658);
   margin-top:8px;
   margin-right: 8px;
   font-weight: 500;
@@ -257,18 +289,20 @@ page {
 .LJtext{
   background-color: rgba(0, 255, 64, 0.925);
   height: 28px;
-  margin-left: 10px;
+  margin-left: 8px;
+  margin-right: 5px;
   margin-top: 6px;
   line-height: 28px;
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 12px;
+  width:60px;
 }
 .LJinput{
-  height: 28px;
+  height: 25px;
   margin-top: 6px;
-  margin-left: 10px;
+  margin-left: 8px;
   border-radius: 5px;
   font-size: 14px;
-  width: 60%;
+  width: 40%;
   background-color: #fff;
 }

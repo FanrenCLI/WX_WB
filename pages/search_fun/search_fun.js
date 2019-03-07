@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    choose: 0,
+    choose: "",
     currentIndex: 0,
     cardRightIn: false,
     cardLeftIn: false,
@@ -65,8 +65,11 @@ Page({
     sw_kc: [],
     grade: [],
     curr: [],
-    teacherinfo:[],
-    attendInfo:[],
+    teacherinfo: [],
+    attendInfo: [],
+    attendcode: "",
+    attendCurr:"",
+    examInfo: [],
     // 判断导航栏列表是否显示
     meunShow: [
       { isShows: true },
@@ -87,8 +90,61 @@ Page({
 
 
 
-    //==========================================================
 
+  },
+ 
+  begin_attend: function (e) {
+    var that = this;
+    wx.getLocation({
+      type: 'wgs84',
+      success(res) {
+        var locationInfo = res;
+        wx.request({
+          url: app.globalData.mainurl + "/attendInfo",
+          data: {
+            code: that.data.attendcode,
+            id: app.globalData.stu_id,
+            name: app.globalData.name,
+            role: app.globalData.ID,
+            classid: that.data.attendCurr,
+            lat: locationInfo.latitude,
+            lon: locationInfo.longitude,
+            major:app.globalData.major,
+          },
+          success(res) {
+            if(res.data.length!=0){
+              that.setData({
+                attendInfo: res.data
+              });
+            }
+          },
+          fail(res) {
+            wx.showToast({
+              title: "考勤失败",
+              icon: "none",
+              duration: 2000
+            });
+          }
+        });
+      },
+      fail(res) {
+        wx.showToast({
+          title: "考勤失败!获取位置信息失败！",
+          icon: "none",
+          duration: 2000
+        })
+      }
+    })
+  },
+  stu_attend1: function (e) {
+    this.setData({
+      attendcode: e.detail.value
+    });
+  },
+  stu_attend2: function (e) {
+    this.setData({
+      attendCurr: e.detail.value
+    });
   },
   InputInfo: function (e) {
     var majorInfo = e.currentTarget.dataset.major;
@@ -124,7 +180,7 @@ Page({
     });
 
     var str = this.data.majorInfo;
-    var that =this;
+    var that = this;
     wx.request({
       url: app.globalData.mainurl + "teacher",
       data: {
@@ -132,29 +188,28 @@ Page({
       },
       method: "GET",
       success: function (res) {
-        if(res.data.length==0){
+        if (res.data.length == 0) {
           wx.showToast({
-            title:"查询失败",
-            icon:"none",
-            duration:2000
+            title: "查询失败",
+            icon: "none",
+            duration: 2000
           })
-        }else{
+        } else {
           that.setData({
-            teacherinfo:res.data,
+            teacherinfo: res.data,
           });
         }
-        
+
       },
       fail(res) {
         wx.showToast({
-          title:"查询失败",
-          icon:"none",
-          duration:2000
+          title: "查询失败",
+          icon: "none",
+          duration: 2000
         })
       }
     })
   },
-  //===============================================================
   menuClick: function (e) {
 
     // 拼接 ，使我们可以获取到menuShow里面每一个isSHows
@@ -178,8 +233,6 @@ Page({
       [menuSrc]: !this.data.meunShow[0].isShows
     });
   },
-
-  // 区域列表事件
   rowClick: function (e) {
     // 限制第一个 '不限' 不能点击
 
@@ -201,8 +254,6 @@ Page({
     });
 
   },
-  //===============================================================
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -211,8 +262,7 @@ Page({
     var that = this;
     that.setData({
       choose: options.choose,
-      sw_kc: app.globalData.sw_kc,
-    });
+    })
     switch (that.data.choose) {
       case "1":
         wx.setNavigationBarTitle({ title: '课表查询' });
@@ -229,38 +279,170 @@ Page({
       case "5":
         wx.setNavigationBarTitle({ title: '考试安排' });
         break;
-      case "6":
-        wx.setNavigationBarTitle({ title: '查询6' });
-        break;
     };
-    //学生考勤功能
-    wx.request({
-      url:app.globalData.mainurl+"attend",
-      data: {
-        stuid: "1622022035"
-      },
-      method: "GET",
-      success: function (res) {
-        if(res.data.length==0){
+    //学生查询考勤信息
+    if (that.data.choose == "3") {
+      wx.request({
+        url: app.globalData.mainurl + "attend",
+        data: {
+          stuid: app.globalData.stu_id
+        },
+        method: "GET",
+        success: function (res) {
+          if (res.data.length == 0) {
+            wx.showToast({
+              title: "查询失败",
+              icon: "none",
+              duration: 2000
+            })
+          } else {
+            that.setData({
+              attendInfo: res.data
+            });
+          }
+        },
+        fail(res) {
+          wx.showToast({
+            title: "查询失败",
+            icon: "none",
+            duration: 2000
+          })
+        }
+      });
+    }
+    //查询考试安排信息
+    if (that.data.choose == "5") {
+      wx.request({
+        url: app.globalData.mainurl + "exam",
+        data: {
+          major: app.globalData.major,
+          classes: app.globalData.class,
+        },
+        method: "GET",
+        success: function (res) {
+          that.setData({
+            examInfo: res.data
+          });
+
+        },
+        fail(res) {
+          wx.showToast({
+            title: "查询失败",
+            icon: "none",
+            duration: 2000
+          })
+        }
+      });
+    }
+    //加载院系和专业的信息，用于选择
+    if (that.data.choose == "4") {
+      wx.request({
+        url: app.globalData.mainurl + "departmentAndmajor",
+        data: {
+        },
+        method: "GET",
+        success: function (res) {
+          var college = res.data.college;
+          var major = res.data.major;
+          var result = [];
+          var result1 = [];
+          for (var k = 0; k < college.length; k++) {
+            // console.log(college[k].name+" "+college[k].collegeId)
+            result[parseInt(college[k].collegeId)] = {};
+            result[parseInt(college[k].collegeId)].name = college[k].name;
+            result1[parseInt(college[k].collegeId)] = {};
+            result1[parseInt(college[k].collegeId)].name = [];
+          }
+          for (var j in major) {
+            result1[major[j].collegeId].name.push(major[j].name);
+          }
+          that.setData({
+            areaLise: result,
+            rowLise: result1,
+          });
+        },
+        fail(res) {
+          console.log("request fail");
+        }
+      })
+    }
+    if (that.data.choose == "1"&&that.data.sw_kc.length==0) {
+      wx.request({
+        url: app.globalData.mainurl + 'curr',
+        method: "GET",
+        data: {
+          major: app.globalData.major,
+          classes: app.globalData.class
+        },
+        success: function (res) {
+          var colornum = 1;
+          for (var i = 0; i < res.data.length; i++) {
+            app.globalData.sw_kc[i] = {};
+            app.globalData.sw_kc[i].xqj = res.data[i].xqj;
+            app.globalData.sw_kc[i].skjc = res.data[i].skjc;
+            app.globalData.sw_kc[i].skcd = res.data[i].skcd;
+            app.globalData.sw_kc[i].kcmc = res.data[i].kcmc;
+            app.globalData.sw_kc[i].bg = "color" + colornum++;
+            app.globalData.sw_kc[i].teacher = res.data[i].teacher;
+            app.globalData.sw_kc[i].skbj = res.data[i].skbj;
+            app.globalData.sw_kc[i].zhouci = res.data[i].zhouci;
+            app.globalData.sw_kc[i].skdd = res.data[i].skdd;
+            if (colornum > 4) {
+              colornum = 1;
+            }
+          }
+        },
+        fail(res) {
+          wx.showToast({
+            title: "获取信息失败",
+            icon: "none",
+            duration: 2000
+          })
+        }
+      })
+    }
+    if (that.data.choose == "2") {
+      wx.request({
+        url: app.globalData.mainurl + "grade",
+        data: {
+          id: app.globalData.stu_id
+        },
+        method: "GET",
+        success: function (res) {
+          if(res.data.length=0){
+            wx.showToast({
+              title:"查询失败",
+              icon:"none",
+              duration:2000
+            })
+          }else{
+            var num_1 = Object.getOwnPropertyNames(res.data.curr).length;
+            var namearr = Object.getOwnPropertyNames(res.data.curr);
+            var num_2 = Object.getOwnPropertyNames(res.data.grade).length;
+            var namearr_1 = Object.getOwnPropertyNames(res.data.grade);
+            for (var i = 0; i < num_1 - 2; i++) {
+              app.globalData.grade[i * 3] = res.data.grade[namearr_1[i * 3 + 3]];
+              app.globalData.grade[i * 3 + 1] = res.data.grade[namearr_1[i * 3 + 4]];
+              app.globalData.grade[i * 3 + 2] = res.data.grade[namearr_1[i * 3 + 5]];
+              app.globalData.curr[i] = res.data.curr[namearr[i + 2]];
+            }
+          }
+        },
+        fail(res) {
           wx.showToast({
             title:"查询失败",
             icon:"none",
             duration:2000
           })
-        }else{
-          that.setData({
-            attendInfo:res.data
-          });
+  
         }
-       
-      },
-      fail(res) {
-        wx.showToast({
-          title:"查询失败",
-          icon:"none",
-          duration:2000
-        })
-      }
+      })
+    }
+    that.setData({
+      
+      sw_kc: app.globalData.sw_kc,
+      grade: app.globalData.grade,
+      curr: app.globalData.curr
     });
   },
 
@@ -275,13 +457,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var that = this;
-    that.setData({
-      grade: app.globalData.grade,
-      curr: app.globalData.curr,
-      areaLise: app.globalData.college,
-      rowLise: app.globalData.major,
-    });
+    
   },
 
   /**
