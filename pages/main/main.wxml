@@ -1,9 +1,9 @@
 <swiper indicator-dots="true" autoplay="true" interval="3000" duration="500" circular="true" indicator-active-color="#FFF" indicator-color="rgba(255,255,255, .4)">
   <swiper-item>
-    <image src="/image/b1.jpg" class='img_ins'></image>
+    <image src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2690199312,2418186946&fm=200&gp=0.jpg" class='img_ins'></image>
   </swiper-item>
   <swiper-item>
-    <image src="/image/b2.png" class='img_ins'></image>
+    <image src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=477883837,3258063885&fm=11&gp=0.jpg" class='img_ins'></image>
   </swiper-item>
   <!-- <block wx:for="{{bgimg}}" wx:key="*this">
     <navigator url="#">
@@ -23,24 +23,36 @@
     </navigator>
   </view>
 </view>
-
-  <view class="func-area">
-    <view bindtap="showCategories">
-      <image src="/image/xiaoyuan.jpg" mode="aspectFill" class="" />
-      <text>校园趣事</text>
+<swiper class="lll" interval="3000" duration="500" circular="true" indicator-active-color="#FFF" indicator-color="rgba(255,255,255, .4)">
+  <swiper-item>
+    <view class="middle-text">
+      <image src="../../image/weather.png" />
+      <view class="inside_1">
+        <text class="text1">今日天气 -- {{weather.date}}</text>
+        <text class="text1">{{weather.status}} {{weather.temperature}} {{weather.wind}} {{weather.winddegree}}
+        </text>
+      </view>
+      <text class="right1">></text>
     </view>
-    <view bindtap="showOrders">
-      <image src="/image/zuixin.jpg" mode="aspectFill" class="bue" />
-      <text>最新通知</text>
+  </swiper-item>
+  <swiper-item>
+    <view class="middle-text">
+      <image src="../../image/tip.png" />
+      <view class="inside_1">
+        <text class="text1">温馨提示 -- 今日你打卡了么！</text>
+        <text class="text1">已经坚持{{daytimes}}天打卡,继续加油呦！</text>
+      </view>
+      <text class="right1">></text>
     </view>
+  </swiper-item>
+</swiper>
+<view class="func-area">
+  <view bindtap="showCategories">
+    <image src="/image/xiaoyuan.png" mode="aspectFill" class="" />
+    <text>伊甸乐园</text>
   </view>
-  <view class="func-area">
-    <view bindtap="showCategories">
-      <image src="/image/tuiwen.jpg" mode="aspectFill" class="" />
-      <text>推文作品</text>
-    </view>
-    <view bindtap="showOrders">
-      <image src="/image/meiri.jpg" mode="aspectFill" class="" />
-      <text>每日一课</text>
-    </view>
+  <view bindtap="showOrders">
+    <image src="/image/daxue.jpg" mode="aspectFill" class="bue" />
+    <text>我的大学</text>
   </view>
+</view>

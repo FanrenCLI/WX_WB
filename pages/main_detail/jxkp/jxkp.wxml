@@ -1,0 +1,6 @@
+<block wx:for="{{kplist}}">
+    <view class="tzlist"  >
+        <text class="title">{{item.title}}</text>
+        <button class="btn" type="primary" data-src="{{item.src}}" bindtap="choosetest">评测</button>
+    </view>
+</block>

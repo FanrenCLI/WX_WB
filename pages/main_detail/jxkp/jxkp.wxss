@@ -1,0 +1,29 @@
+
+.tzlist{
+    margin: 10rpx 10rpx 0rpx 10rpx ;
+    height: 80rpx;
+    background-color: rgba(99, 99, 99, 0.055);
+    line-height: 80rpx;
+    border: 2rpx solid black;
+    
+    vertical-align: middle;
+}
+
+.title{
+    padding: 0 0 0 15rpx;
+    float: left;
+    font-size: 30rpx;
+    width:60%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.btn{
+    height:60rpx;
+    line-height: 60rpx;
+    margin-top: 10rpx;
+    margin-right: 10rpx;
+    width:130rpx;
+    font-size: 30rpx;
+    float: right;
+}

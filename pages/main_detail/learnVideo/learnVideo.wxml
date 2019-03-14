@@ -1,0 +1,22 @@
+<view class='menu'>
+    <view class='menu-list'>
+        <view class="content">
+            <input type="text" placeholder="标题或作者" value="{{majorInfo}}" bindinput="Infoinput" />
+            <image src="../../../image/sousuo.png" bindtap="searchbyinfo"/>
+        </view>
+    </view>
+</view>
+<scroll-view scroll-y="{{true}}" style="width:100%">
+    <block wx:for="{{videolist}}">
+        <view class="section" bindtap="choosevideo" data-src="{{item.src}}" data-time="{{item.time}}" data-auth="{{item.auth}}" data-title="{{item.title}}">
+            <image src="../../../image/myvideo.png" />
+            <view class="content-right">
+                <view class="section_title">{{item.title}}</view>
+                <view class="inside">
+                    <view class="auth">作者:{{item.auth}}</view>
+                    <view class="time">日期:{{item.time}}</view>
+                </view>
+            </view>
+        </view>
+    </block>
+</scroll-view>

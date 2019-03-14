@@ -1,22 +1,30 @@
 /* pages/search/search.wxss */
-
+.search{
+  background-image: url("http://39.105.26.229:8080/asd.png");
+    height:1200rpx;
+    width:100%;
+  }
 .upl {
     margin-top: 20rpx;
-    height: 90rpx;
+    height: 100rpx;
     width: 100%;
-    background: rgba(255, 255, 255, 0.589);
+    background: rgba(255, 255, 255, 0.767);
     border: 1px solid rgba(0, 0, 0, .1);
     border-left: none;
     border-right: none;
+    border-radius: 20rpx;
     padding: 0 40rpx 0 40rpx;
     flex-direction: column;
     align-items: flex-start;
     box-sizing: border-box;
-}
+    
+} 
+
 .uploader-text {
     width: 100%;
-    line-height: 52px;
-    font-size: 32rpx;
+    line-height: 100rpx;
+    font-size: 35rpx;
+    font-family: fantasy;
     color: #000000;
     display: flex;
     flex-direction: row;

@@ -1,4 +1,7 @@
 /* pages/usercenter/usercenter.wxss */
+.back{
+  background-image: url("http://39.105.26.229:8080/timg.jpg")
+}
 .userinfo {  
     position: relative;  
     width: 750rpx;  
@@ -7,8 +10,19 @@
     display: flex;  
     flex-direction: column;  
     align-items: center;  
+
   }  
-    
+  .name{
+    color: black
+  }
+    .weui-cells__title{
+      
+      color: rgb(0, 0, 0);
+      opacity: 0.9;
+    }
+    .weui-cells{
+      opacity: 0.9;
+    }
   .userinfo-avatar {  
     overflow:hidden;  
     display: block;  
@@ -19,6 +33,7 @@
     border-radius: 50%;  
     border: 2px solid #fff;  
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);  
+
   }
   .sign-out-container{
     padding: 50rpx 26rpx 26rpx 26rpx;

@@ -1,0 +1,8 @@
+<view class="title">{{title}}</view>
+<view class="myVideo">
+  <video class="video" src="{{src}}" objectFit="fill" controls></video>
+</view>
+<view class="discussion">
+  <text>日期:{{time}}</text>
+  <text>作者:{{auth}}</text>
+</view>

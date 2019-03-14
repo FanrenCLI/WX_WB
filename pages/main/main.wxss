@@ -31,7 +31,43 @@
   height: 100%;
 }
 
-
+.middle-text{
+  height: 140rpx;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 10rpx;
+  display: flex;
+}
+.inside_1{
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  margin-left: 25rpx;
+}
+.right1{
+  text-align: right;
+  margin-right: 10rpx;
+  color: rgb(145, 145, 145);
+  width:10%;
+  margin-top:45rpx;
+  height:140rpx;
+  
+}
+.text1{
+  font-size: 25rpx;
+  margin-top:25rpx;
+}
+.lll{
+  height: 140rpx;
+  margin-bottom: 10rpx;
+  background-color: black
+}
+.middle-text image{
+  margin-top: 16rpx;
+  float: left;
+  margin-left: 10rpx;
+  width:15%;
+  height: 110rpx;
+}
 
 .func-area {
 	display: flex;
@@ -43,6 +79,7 @@
 .func-area view {
 	width: 50%;
   text-align: center;
+  margin-top: 10rpx;
   margin-bottom: 10rpx;
 }
 
@@ -50,7 +87,8 @@
 	display: block;
 	color: #333;
 	font-size: 30rpx;
-	line-height: 30rpx;
+  line-height: 30rpx;
+  margin: 10rpx 0rpx;
 }
 
 .func-area image {

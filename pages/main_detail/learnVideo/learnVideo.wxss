@@ -1,0 +1,85 @@
+/* pages/index/quary/jiaoshi.wxss */
+.menu{
+  background-color: #f4f4f4;
+  border-bottom:  solid #e9e9e9;
+  display: table;
+  width: 100%;
+}
+.menu-list{
+  justify-content: space-between;
+  display:table-cell ;
+  vertical-align: middle;
+  height: 90rpx;
+}
+.content{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.content input{
+  width: 85%;
+  background-color: #ffffff;
+  height: 60rpx;
+  font-size: 30rpx;
+  margin-left: 40rpx;
+  
+}
+.content image{
+  height:60rpx;
+  width: 60rpx;
+  margin-top: 0;
+  margin-left: 0;
+}
+.section {
+    padding: 0rpx 10rpx;
+    margin: 10rpx 0rpx;
+    overflow:hidden;  
+    display: flex;
+   
+    border: 2px solid #fff;  
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);  
+    height: 150rpx;
+    background-color: floralwhite
+  }
+  .content-right{
+    margin-top: 25rpx;
+  }
+  .section_title {   
+    margin-left: 20rpx;
+    font-size: 30rpx;
+    font-weight: 550;
+    line-height: 70rpx;
+    height: 70rpx;
+    width: 500rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .inside{
+    display: flex;
+    height: 30rpx;
+    margin-top:10rpx;
+}
+  .auth{
+    margin-left: 20rpx;
+    font-size: 25rpx;
+    color: darkgrey;
+    width:200rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .time{
+      margin-left: 10rpx;
+      width: 200rpx;
+      font-size: 25rpx;
+      color: darkgrey;
+  }
+  image{
+    margin-left: 15rpx;
+    margin-top: 20rpx;
+    width:110rpx;
+    height: 110rpx;
+
+}

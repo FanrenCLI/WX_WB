@@ -1,0 +1,96 @@
+/* pages/index/quary/jiaoshi.wxss */
+
+  .section {
+    background: #fff;
+    padding: 0rpx 10rpx;
+    margin: 30rpx 15rpx;
+    overflow:hidden;  
+    display: flex;  
+    border-radius: 20px;  
+    border: 2px solid #fff;  
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);  
+    height: 50px;
+  }
+  .section1 {
+    background: #fff;
+    margin: 0rpx 15rpx;
+    overflow:hidden;  
+    display: flex;  
+    border-radius: 20px;  
+    border: 2px solid #fff;  
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);  
+  
+  }
+  
+  .inside_view{
+      width:1200rpx;
+      margin-left: 20rpx;
+  }
+  .radio {
+    width: 150rpx;
+    height: 20px;
+    transform:scale(0.9);
+    margin-top: 10px;
+    padding-top: 10rpx;
+    font-size: 12px;
+    font-weight: 550;
+  }
+  .section_title {
+    text-align: center;
+    color: rgba(255, 0, 34, 0.603);
+    width: 12%;
+    font-weight: 550;
+    padding: 30rpx 0;
+    line-height: 17px;
+    margin-top:0;
+    margin-left: 15rpx;
+    padding-top:7px;
+  }
+
+
+  /* ==================================================== */
+  .table {
+    border: 0px solid darkgray;
+    font-size: 22rpx;
+    padding: 10rpx;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .tr {
+    display: flex;
+    justify-content: left;
+    height: 80rpx;
+    align-items: center;
+    margin-top: 30rpx;
+    border-radius: 10rpx;
+    border: 1rpx solid skyblue
+  }
+  .tr1 {
+    display: flex;
+    justify-content: left;
+    height: 80rpx;
+    align-items: center;
+    border-radius: 10rpx;
+    border: 1rpx solid skyblue
+  }
+  .td1 {
+      width:130rpx;
+      margin-left: 10rpx;
+      justify-content: center;
+      text-align: center;
+  }
+  .bg-w{
+    background: #3066FF;
+    color: #FFFFFF;
+    font-size: 26rpx;
+  }
+  .bg-g{
+    background: #E6F3F9;
+  }
+  .btn{
+      height:70rpx;
+      line-height: 70rpx;
+      font-size: 30rpx;
+  }

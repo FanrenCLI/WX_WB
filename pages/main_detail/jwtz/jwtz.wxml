@@ -1,0 +1,6 @@
+<block wx:for="{{tzlist}}">
+    <view class="tzlist" bindtap="chooseMessage" data-src="{{item.src}}">
+        <text class="title">{{item.title}}</text>
+        <text class="time">{{item.time}}</text>
+    </view>
+</block>

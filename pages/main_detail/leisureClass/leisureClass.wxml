@@ -1,0 +1,60 @@
+<!-- pages/index/quary/jiaoshi.wxml -->
+<view class="section">
+    <text class="section_title">周几</text>
+    <scroll-view scroll-x="{{true}}">
+        <view class=" inside_view">
+            <radio-group class="radio-grouo" bindchange="radioChange">
+                <label>
+                    <radio value="1" class='radio' checked="{{xqj==1?true:false}}">周一</radio>
+                </label>
+                <label>
+                    <radio value="2" class='radio' checked="{{xqj==2?true:false}}">周二</radio>
+                </label>
+                <label>
+                    <radio value="3" class='radio' checked="{{xqj==3?true:false}}">周三</radio>
+                </label>
+                <label>
+                    <radio value="4" class='radio' checked="{{xqj==4?true:false}}">周四</radio>
+                </label>
+                <label>
+                    <radio value="5" class='radio' checked="{{xqj==5?true:false}}">周五</radio>
+                </label>
+                <label>
+                    <radio value="6" class='radio' checked="{{xqj==6?true:false}}">周六</radio>
+                </label>
+                <label>
+                    <radio value="7" class='radio' checked="{{xqj==7?true:false}}">周日</radio>
+                </label>
+            </radio-group>
+        </view> 
+    </scroll-view>
+</view>
+<view class="section1">
+    <scroll-view scroll-x="{{true}}" >
+        <view class="table">
+            <view class="tr bg-w">
+                <view class="td1">地点</view>
+                <view class="td1">人数</view>
+                <view class="td1">空闲座位</view>
+                <view class="td1">进入</view>
+                <view class="td1">离开</view>
+            </view>
+            <block wx:for="{{leisureClass}}" wx:for-item="item" >
+                <view class="tr1 bg-g" wx:if="{{index % 2 == 1}}">
+                    <view class="td1">{{item.place}}</view>
+                    <view class="td1">{{item.number}}</view>
+                    <view class="td1">{{item.seat}}</view>
+                    <button class="btn" type="primary"bindtap="chooseRoom" data-place="{{item.place}}">进入</button>
+                    <button class="btn" type="warn"bindtap="leaveRoom" data-place="{{item.place}}">离开</button>
+                </view>
+                <view class="tr1" wx:else>
+                    <view class="td1">{{item.place}}</view>
+                    <view class="td1">{{item.number}}</view>
+                    <view class="td1">{{item.seat}}</view>
+                    <button class="btn" type="primary"bindtap="chooseRoom" data-place="{{item.place}}">进入</button>
+                    <button class="btn" type="warn"bindtap="leaveRoom" data-place="{{item.place}}">离开</button>
+                </view>
+            </block>
+        </view>
+    </scroll-view>
+</view>

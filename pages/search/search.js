@@ -18,10 +18,13 @@ Page({
       name: '学生考勤'
     }, {
       url: '../search_fun/search_fun?choose=4',
-      name: '授课教师信息'
+      name: '教师信息'
     }, {
       url: '../search_fun/search_fun?choose=5',
       name: '考试安排'
+    }, {
+      url: '../search_fun/search_fun?choose=6',
+      name: '校园黄页'
     }],
     
   },

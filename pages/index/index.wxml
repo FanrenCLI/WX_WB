@@ -1,7 +1,7 @@
 <view class="page">
     <view class="page__hd">
         <view>
-            <image style="width:150px;height:150px;" src="../../image/image_1.png" />
+            <image style="width:170px;height:150px;" src="../../image/asd.png" />
         </view>
     </view>
     <view class="page__bd">

@@ -1,6 +1,19 @@
 /* pages/search_fun/search_fun.wxss */
 @import '../../utils/copy.wxss';
 @import '../../utils/ripples.min.wxss';
+.line_1{
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  opacity: 0.7;
+}
+.line_2{
+  
+  opacity: 0.4;
+  height: 103rpx;
+  border-bottom: 1px dashed #6e6e6e;
+}
+
 .flex-item {
   width: 110rpx;
   height: 80rpx;
@@ -10,8 +23,9 @@
   position: absolute;
   justify-content: center;
   display: flex;
-  align-items: center;
   border-radius: 5px;
+  overflow: hidden;
+  
 }
 
 .smalltext {
@@ -111,7 +125,7 @@ page {
 .table2 {
   border: 0px solid darkgray;
   font-size: 12px;
-  width: 45rem;
+  width: 20rem;
 }
 .tr2 {
   display: flex;

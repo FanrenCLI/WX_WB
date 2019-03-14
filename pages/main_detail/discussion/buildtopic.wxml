@@ -1,0 +1,11 @@
+<view class="header_1">
+    <view class="content1">标题:</view>
+    <input class="title" type="text" placeholder="  请输入标题,不超过15字" bindinput="title_input" />
+</view>
+<view class="main">
+    <view class="content">内容:</view>
+    <view class="textarea-wrp">
+        <textarea auto-focus="true" adjust-position="true" bindinput="content_input" cursor-spacing='300' maxlength="-1" placeholder="请输入内容,不超过200字" />
+    </view>
+</view>
+<button class="btn" type="primary" bindtap="uploadContent">发表内容</button>

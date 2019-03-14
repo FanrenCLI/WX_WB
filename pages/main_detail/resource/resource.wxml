@@ -1,0 +1,24 @@
+<view class='menu'>
+    <view class='menu-list'>
+        <view class="content">
+            <input type="text" placeholder="标题或作者" value="{{majorInfo}}" bindinput="Infoinput" />
+            <image src="../../../image/sousuo.png" bindtap="searchbyinfo"/>
+        </view>
+    </view>
+</view>
+<view class="table1">
+    <view class="tr1 bg-w1">
+        <view class="th1">名称</view>
+        <view class="th2">发布人</view>
+        <view class="th3">日期</view>
+        <view class="th4">下载</view>
+    </view>
+    <block wx:for="{{resource}}" wx:for-index="idx">
+        <view class="tr1">
+            <view class="td1">{{item.resourceName}}</view>
+            <view class="td2">{{item.uploaderName}}</view>
+            <view class="td3">{{item.uploadTime}}</view>
+            <button class="btn" type="primary" bindtap="downloadfile" data-url="{{item.resourceDir}}">下载</button>
+        </view>
+    </block>
+</view>

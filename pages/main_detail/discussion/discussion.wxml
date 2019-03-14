@@ -1,16 +1,28 @@
+<!-- <view class="LJView">
+    <button class="btn" type="primary" loading="{{loading}}" disabled="{{disabled}}" bindtap="buildtopic">
+        创建话题
+    </button> 
+</view> -->
+<view class='menu'>
+    <view class='menu-list'>
+        <view class="content">
+            <input type="text" placeholder="标题或作者" value="{{majorInfo}}" bindinput="Infoinput" />
+            <image src="../../../image/sousuo.png" bindtap="searchbyinfo" />
+            <image src="../../../image/jia.png" bindtap="buildtopic" />
+        </view>
+    </view>
+</view>
 <view class="headLine box box-tb">
-    <view class="headLineWra box box-lr" wx:for="{{headLineList}}" bindtap="jumpDetails" data-Id="{{item.id}}">
+    <view class="headLineWra box box-lr" wx:for="{{headLineList}}" bindtap="jumpDetails" data-count="{{item.count}}" data-auth="{{item.auth}}" data-title="{{item.title}}">
         <view class="headLineContent box box-tb box-align-center box-pack-around">
             <view class="headLineTitle">{{item.title}}</view>
             <view class="headLineInfor  box box-lr box-pack-between">
-                <view class="headLineSource">日期: {{item.date}}</view>
-                <view class="headLineSource">题主：{{item.source}}</view>
+                <view class="headLineSource">日期: {{item.time}}</view>
+                <view class="headLineSource">题主：{{item.auth}}</view>
             </view>
         </view>
         <view class="arrowsBox box box-tb box-pack-center">
-            <view class="userinfo-avatar">
-                <open-data type="userAvatarUrl"></open-data>
-            </view>
+            <image class="userimage" mode="scaleToFill" src="{{item.userimage}}" style="height:50px;width:50px" />
         </view>
     </view>
 </view>

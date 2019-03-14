@@ -3,6 +3,49 @@
   page{
       background-color: rgba(156, 156, 156, 0.082)
   }
+  /* .LJView{
+    width: 100%;
+    height: 80rpx;
+    position: fixed;
+  }
+  .btn{
+    height: 80rpx;
+    line-height: 80rpx;
+  } */
+  .menu{
+    background-color: #f4f4f4;
+    border-bottom:  solid #e9e9e9;
+    display: table;
+    width: 100%;
+  }
+  .menu-list{
+    justify-content: space-between;
+    display:table-cell ;
+    vertical-align: middle;
+    height: 90rpx;
+  }
+  .content{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+  
+  }
+  .content input{
+    width: 78%;
+    background-color: #ffffff;
+    height: 60rpx;
+    font-size: 30rpx;
+    margin-left: 40rpx;
+    border-radius: 30rpx;
+  }
+  .content image{
+    height:60rpx;
+    width: 60rpx;
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+
   .headLine {
     width: 95%;
     margin-left: 7px;
@@ -11,10 +54,11 @@
   .headLineWra {
     height: 160rpx;
     width: 100%;
-    border: 5rpx solid rgba(12, 93, 243, 0.253);
     margin-top: 10px;
     border-radius: 10px;
-    background-color: rgba(255, 0, 0, 0.041);
+    background-color: rgb(255, 255, 255);
+    border: 2px solid #fff;  
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);  
   }
   
   .headLineContent {
@@ -24,12 +68,14 @@
   
   .headLineTitle {
     width: 90%;
-    height: 86rpx;
+    height: 46rpx;
     line-height: 46rpx;
     font-weight: 700;
-    font-size: 32rpx;
-    overflow:hidden; 
-    display:-webkit-box;
+    font-size: 35rpx;
+    white-space: nowrap;
+    margin-top: 20rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
   .headLineInfor {
@@ -38,16 +84,16 @@
     font-size: 26rpx;
     color: #666;
   }
-  
   .arrowsBox {
     width: 20%;
     height: 100%;
   }
-  .userinfo-avatar {  
+  .userimage {  
     overflow:hidden;  
     display: block;  
     width: 120rpx;  
     height: 120rpx; 
+    
     border-radius: 50%;  
     border: 2px solid #fff;  
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);  
@@ -63,7 +109,6 @@
     width: 100%;
     height:40rpx;
     text-align: center;
-    /*line-height: 80rpx;*/
     font-size: 28rpx;
     color: rgb(0, 0, 0)
   }
@@ -138,5 +183,4 @@
       -webkit-align-items: center;
       align-items: center;
   }
-  
   
