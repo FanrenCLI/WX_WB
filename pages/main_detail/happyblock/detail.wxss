@@ -1,38 +1,11 @@
-/**index.wxss**/
 page{
-   
-        background-color: rgba(122, 122, 122, 0.075)
-    
+  /* background-image: url("http://39.105.26.229:8080/10.png") */
 }
-.sendmessage {
-    display: flex;
-    flex-direction:row;
-    border:1px solid #aaaaaa;
-    margin:5px 5px;
-    border-radius: 5rpx;
-    background-color: white;
-  }
-  
-  .sendmessage input { 
-    width:80%;
-    height:30px;
-   line-height : 30px ;
-   font-size : 14px ;
-   padding-left:10px;
-  }
-  .sendmessage button {
-   border : 1px solid #ffffff ;
-   width : 20% ;
-   height : 30px ;
-   background : #000000 ;
-   color : #ffffff ;
-   line-height : 30px ;
-   font-size : 14px ;
-  }
-  .historycon {
+.historycon {
     width:95%;
     margin-left:auto;
     margin-right: auto;
+    margin-top: 25rpx;
     flex-direction:column;
     background-color: white;
     border: 2px solid #fff;  
@@ -83,20 +56,4 @@ page{
       line-height: 20px;
       border:2px solid rgba(0, 132, 255, 0.219);
       border-radius: 5px;
-  }
-
-  .title_header{
-    height: 30px;
-    margin: 5px 5px;
-    background-color: white;
-    border-radius: 10px;
-    line-height: 30px;
-    font-size: 14px;
-    text-align: center;
-    font-weight: 550;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;   
-    border: 2px solid #fff;  
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);  
   }

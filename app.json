@@ -10,18 +10,22 @@
     "pages/search_fun/lesson",
     "pages/usercenter/usercenter",
     "pages/main_detail/discussion/buildtopic",
+    "pages/main_detail/discussion/discussion",
     "pages/main_detail/discussion/topicdetail",
     "pages/main_detail/learnVideo/video",
     "pages/main_detail/learnVideo/learnVideo",
     "pages/main_detail/jwtz/detail",
     "pages/main_detail/resource/resource",
-    "pages/main_detail/discussion/discussion",
     "pages/main_detail/jxkp/jxkp",
     "pages/main_detail/jwtz/jwtz",
     "pages/main_detail/jxkp/detail",
     "pages/main_detail/leisureClass/leisureClass",
     "pages/main_detail/wjdc/wjdc",
-    "pages/main_detail/wjdc/detail"
+    "pages/main_detail/wjdc/detail",
+    "pages/main_detail/happyblock/happyblock",
+    "pages/main_detail/learnblock/detail",
+    "pages/main_detail/learnblock/learnblock",
+    "pages/main_detail/happyblock/detail"
   ],
   "permission": {
     "scope.userLocation": {

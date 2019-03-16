@@ -5,7 +5,7 @@ var app = getApp()
 
 Page({
     data: {
-        contentlist: [],
+        contentlist: [{auth:"fanren",content:"zhshi smzhshi sm"}],
         message: '',
         count: 1,
         titleauth:"",

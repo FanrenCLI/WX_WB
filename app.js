@@ -40,6 +40,8 @@ App({
         grade:[],
         curr:[],
         src:'',
+        content:[],
+        happythings:[],
     }
     
 })

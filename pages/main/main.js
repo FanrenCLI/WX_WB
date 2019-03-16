@@ -55,10 +55,14 @@ Page({
     daytimes:45
   },
   happyblock:function(res){
-
+    wx.navigateTo({
+      url:"../main_detail/happyblock/happyblock",
+    })
   },
   learnblock:function(res){
-
+    wx.navigateTo({
+      url:"../main_detail/learnblock/learnblock"
+    })
   },
   onLoad:function(res){
     var that=this;

@@ -1,0 +1,30 @@
+<block wx:if="{{choose==1}}">
+    <view class="historycon">
+        <scroll-view scroll-y="true" class="history">
+            <view class="lastview" wx:for="{{contentlist}}">
+                <view class="LJView">
+                    <view class="userinfo-avatar">
+                        <image src="{{item.userimage}}" style="height:30px;width:30px" />
+                    </view>
+                    <text>{{item.auth}}</text>
+                </view>
+                <view class="LUView">{{item.content}}</view>
+            </view>
+        </scroll-view>
+    </view>
+</block>
+<block wx:if="{{choose==2}}">
+    <view class="historycon">
+        <scroll-view scroll-y="true" class="history">
+            <view class="lastview" wx:for="{{happythings}}">
+                <view class="LJView">
+                    <view class="userinfo-avatar">
+                        <image src="{{item.userimage}}" style="height:30px;width:30px" />
+                    </view>
+                    <text>{{item.auth}}</text>
+                </view>
+                <view class="LUView">{{item.content}}</view>
+            </view>
+        </scroll-view>
+    </view>
+</block>

@@ -71,7 +71,7 @@ Page({
     attendCurr: "",
     examInfo: [],
     phone: [],
-    collegeCurr:[],
+    collegeCurr: [],
     // 判断导航栏列表是否显示
     meunShow: [
       { isShows: true },
@@ -276,10 +276,16 @@ Page({
         wx.setNavigationBarTitle({ title: '学生考勤' });
         break;
       case "4":
-        wx.setNavigationBarTitle({ title: '授课教师信息' });
+        wx.setNavigationBarTitle({ title: '教师信息' });
         break;
       case "5":
         wx.setNavigationBarTitle({ title: '考试安排' });
+        break;
+      case "6":
+        wx.setNavigationBarTitle({ title: '校园黄页' });
+        break;
+      case "7":
+        wx.setNavigationBarTitle({ title: '人才培养' });
         break;
     };
     if (that.data.choose == "1" && that.data.sw_kc.length == 0) {
@@ -483,50 +489,50 @@ Page({
     }
     if (that.data.choose == "7") {
       wx.showToast({
-        title:"查询中...",
-        icon:"loading"
+        title: "查询中...",
+        icon: "loading"
       })
       wx.request({
-        url:app.globalData.mainurl+"jxdg",
-        data:{
-          info:app.globalData.stu_id.substring(0,7),
+        url: app.globalData.mainurl + "jxdg",
+        data: {
+          info: app.globalData.stu_id.substring(0, 7),
         },
-        success(res){
+        success(res) {
           wx.hideToast({});
-          var i=0;
-          var result=[];
-          if(res.data.collegeone.length>res.data.collegetwo){
-            if(res.data.collegeone.length>res.data.collegethree.length){
-              i=res.data.collegeone.length;
-            }else{
-              i=res.data.collegethree.length
+          var i = 0;
+          var result = [];
+          if (res.data.collegeone.length > res.data.collegetwo) {
+            if (res.data.collegeone.length > res.data.collegethree.length) {
+              i = res.data.collegeone.length;
+            } else {
+              i = res.data.collegethree.length
             }
-          }else{
-            if(res.data.collegetwo.length>res.data.collegethree.length){
-              i=res.data.collegetwo.length;
-            }else{
-              i=res.data.collegethree.length;
+          } else {
+            if (res.data.collegetwo.length > res.data.collegethree.length) {
+              i = res.data.collegetwo.length;
+            } else {
+              i = res.data.collegethree.length;
             }
           }
-          if(i<res.data.collegefour.length){
-            i=res.data.collegefour.length
+          if (i < res.data.collegefour.length) {
+            i = res.data.collegefour.length
           }
-          for(var n=0;n<i;n++){
-            result[n]={};
-            result[n].collegeone=res.data.collegeone[n]!=null?res.data.collegeone[n]:"";
-            result[n].collegetwo=res.data.collegetwo[n]!=null?res.data.collegetwo[n]:"";
-            result[n].collegethree=res.data.collegethree[n]!=null?res.data.collegethree[n]:"";
-            result[n].collegefour=res.data.collegefour[n]!=null?res.data.collegefour[n]:"";
+          for (var n = 0; n < i; n++) {
+            result[n] = {};
+            result[n].collegeone = res.data.collegeone[n] != null ? res.data.collegeone[n] : "";
+            result[n].collegetwo = res.data.collegetwo[n] != null ? res.data.collegetwo[n] : "";
+            result[n].collegethree = res.data.collegethree[n] != null ? res.data.collegethree[n] : "";
+            result[n].collegefour = res.data.collegefour[n] != null ? res.data.collegefour[n] : "";
           }
           that.setData({
-            collegeCurr:result,
+            collegeCurr: result,
           })
         },
-        fail(res){
+        fail(res) {
           wx.showToast({
-            title:"查询失败",
-            icon:"none",
-            duration:2000
+            title: "查询失败",
+            icon: "none",
+            duration: 2000
           })
         }
       })

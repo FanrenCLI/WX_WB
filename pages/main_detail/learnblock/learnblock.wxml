@@ -1,0 +1,17 @@
+<view class="navbar">
+    <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" bindtap="navbarTap">{{item}}
+    </text>
+</view>
+<scroll-view class="outbox" scroll-y>
+    <block wx:for="{{content}}">
+        <view class="mainbody" bindtap="boxlink" data-src="{{item.src}}">
+            <view class="left-content">
+                <text class="title">{{item.title}}</text>
+                <text class="tip">{{item.time}}</text>
+            </view>
+            <view class="right-content">
+                <image  src="{{item.image}}"  />
+            </view>
+        </view>
+    </block>
+</scroll-view>

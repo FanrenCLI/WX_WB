@@ -1,0 +1,71 @@
+page{
+    background-color: rgb(255, 255, 255)
+}
+.outview{
+    width:95%;
+    margin-top: 20rpx;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+}
+.purewall{
+    width:60%;
+    height: 500rpx;
+    border: 1rpx solid rgba(190, 190, 190, 0.486);
+}
+.pureword{
+    display: flex;
+    flex-direction: column;
+    width:40%;
+    border: 1rpx solid rgba(190, 190, 190, 0.486);
+    text-align: center;
+    border-left: none;
+    height:500rpx ;
+    overflow: hidden;
+}
+.puretext{
+    width: 100%;
+    color: deeppink;
+}
+.puretext1{
+    width: 100%;
+    color: rgba(1, 145, 85, 0.712);
+  
+}
+.content{
+    margin-top: 20rpx;
+    font-size: 30rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    width:95%;
+    white-space: nowrap;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 2px solid #fff;  
+    background-color: rgba(255, 20, 145, 0.062);
+    border-radius: 5rpx;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);  
+}
+.content1{
+    margin-top: 20rpx;
+    font-size: 30rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    width:95%;
+    white-space: nowrap;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 2px solid #fff;  
+    background-color: rgba(1, 145, 85, 0.089);
+    border-radius: 5rpx;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);  
+}
+.purewall image{
+    width: 95%;
+    height:480rpx;
+    margin-left: 10rpx;
+    margin-top:10rpx;
+    border-radius:10rpx;
+}
