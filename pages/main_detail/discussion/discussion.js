@@ -3,7 +3,7 @@ let app = getApp();
 Page({
     data: {
         count: 0,
-        headLineList: [{title:"这是什这是aasdasd什这是什这是什这是什这是什这是什么",auth:"fanren",time:"2018-12-5",userimage:"https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83er2RuDvkxIkLq9v8cTbLUHfG80om2ca1icIf7kF0TcKS1PicRSguzXXrIOiaRzI48GYlrX8ibbDuPRVYw/132"}],
+        headLineList: [{title:"这是什这是aasdasd什这是什这是什这是什这是什这是什么",auth:"fanren",time:"2018-12-5",userimage:""}],
         info:"",
     },
 

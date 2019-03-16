@@ -1,5 +1,8 @@
 /* pages/index/quary/jiaoshi.wxss */
 
+Page{
+  background-image: url("http://39.105.26.229:8080/11.png")
+}
   .section {
     background: #fff;
     padding: 0rpx 10rpx;

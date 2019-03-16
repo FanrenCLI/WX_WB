@@ -97,3 +97,11 @@
 	border-radius: 20rpx;
 }
 
+.footview{
+  border-top: 1rpx solid  rgba(141, 141, 141, 0.452);
+  margin-top: 10rpx;
+  text-align: center;
+  font-size: 25rpx;
+  height: 80rpx;
+  color: rgba(141, 141, 141, 0.452)
+}

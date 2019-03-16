@@ -9,22 +9,32 @@ Page({
   data: {
     search_list: [{
       url: '../search_fun/search_fun?choose=1',
-      name: '课表查询'
+      name: '课表查询',
+      src:"../../image/kb.png"
     }, {
       url: '../search_fun/search_fun?choose=2',
-      name: '成绩查询'
+      name: '成绩查询',
+      src:"../../image/cj.png"
     }, {
       url: '../search_fun/search_fun?choose=3',
-      name: '学生考勤'
+      name: '学生考勤',
+      src:"../../image/kq.png"
     }, {
       url: '../search_fun/search_fun?choose=4',
-      name: '教师信息'
+      name: '教师信息',
+      src:"../../image/js.png"
     }, {
       url: '../search_fun/search_fun?choose=5',
-      name: '考试安排'
+      name: '考试安排',
+      src:"../../image/ks.png"
     }, {
       url: '../search_fun/search_fun?choose=6',
-      name: '校园黄页'
+      name: '校园黄页',
+      src:"../../image/dhb.png"
+    }, {
+      url: '../search_fun/search_fun?choose=7',
+      name: '人才培养方案',
+      src:"../../image/rc.png"
     }],
     
   },

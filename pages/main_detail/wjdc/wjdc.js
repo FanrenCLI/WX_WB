@@ -2,7 +2,7 @@ let app =  getApp();
 
   Page({
       data:{
-        wjlist:[{title:"这是标题",time:"2018-12-09",src:"http:39.105.26.229:8080/asd.html"}],
+        wjlist:[{title:"这是标题",time:"2018-12-09",src:""}],
         count:13,
       },
       choosetest:function(e){

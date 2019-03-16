@@ -15,6 +15,8 @@ let app =  getApp();
           auth:options.auth,
           time:options.time
         })
-        console.log(that.data.src);
+      },
+      pauseplay:function(res){
+        console.log(asd);
       }
   })

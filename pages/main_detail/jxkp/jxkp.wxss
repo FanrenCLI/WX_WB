@@ -1,8 +1,10 @@
-
+page{
+    background-image: url("http://39.105.26.229:8080/8.png")
+}
 .tzlist{
     margin: 10rpx 10rpx 0rpx 10rpx ;
     height: 80rpx;
-    background-color: rgba(99, 99, 99, 0.055);
+    background-color: rgba(255, 255, 255, 0.63);
     line-height: 80rpx;
     border: 2rpx solid black;
     
@@ -27,3 +29,4 @@
     font-size: 30rpx;
     float: right;
 }
+

@@ -5,13 +5,6 @@
   <swiper-item>
     <image src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=477883837,3258063885&fm=11&gp=0.jpg" class='img_ins'></image>
   </swiper-item>
-  <!-- <block wx:for="{{bgimg}}" wx:key="*this">
-    <navigator url="#">
-      <swiper-item>
-        <image src="#" class='img_ins'></image>
-      </swiper-item>
-    </navigator>
-  </block> -->
 </swiper>
 <view class='center_table'>
   <view wx:for="{{index_list}}" wx:key="{{item.id}}" style="{{'display:'+item.dis}}" class='center_td'>
@@ -47,12 +40,13 @@
   </swiper-item>
 </swiper>
 <view class="func-area">
-  <view bindtap="showCategories">
+  <view bindtap="happyblock">
     <image src="/image/xiaoyuan.png" mode="aspectFill" class="" />
     <text>伊甸乐园</text>
   </view>
-  <view bindtap="showOrders">
+  <view bindtap="learnblock">
     <image src="/image/daxue.jpg" mode="aspectFill" class="bue" />
     <text>我的大学</text>
   </view>
 </view>
+<view class="footview">我是有底线的！！</view>

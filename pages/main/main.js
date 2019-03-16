@@ -45,7 +45,7 @@ Page({
       "id": 6,
       "dis": ''
     }, {
-      "url": "",
+      "url": "../main_detail/more/more",
       "img": "more.png",
       "name": '更多',
       "id": 7,
@@ -53,6 +53,12 @@ Page({
     }],
     weather:{},
     daytimes:45
+  },
+  happyblock:function(res){
+
+  },
+  learnblock:function(res){
+
   },
   onLoad:function(res){
     var that=this;
@@ -72,5 +78,5 @@ Page({
         })
       }
     })
-  }
+  },
 })

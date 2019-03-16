@@ -70,7 +70,8 @@ Page({
     attendcode: "",
     attendCurr: "",
     examInfo: [],
-    phone:[],
+    phone: [],
+    collegeCurr:[],
     // 判断导航栏列表是否显示
     meunShow: [
       { isShows: true },
@@ -457,30 +458,79 @@ Page({
     }
     if (that.data.choose == "6") {
       wx.showToast({
-        title:"查询中...",
-        icon:"loading",
+        title: "查询中...",
+        icon: "loading",
       })
       wx.request({
-        url:app.globalData.mainurl+"phone",
-        data:{
+        url: app.globalData.mainurl + "phone",
+        data: {
 
+        },
+        success(res) {
+          wx.hideToast({});
+          that.setData({
+            phone: res.data,
+          })
+        },
+        fail(res) {
+          wx.showToast({
+            title: "查询失败",
+            icon: 'none',
+            duration: 2000
+          })
+        }
+      })
+    }
+    if (that.data.choose == "7") {
+      wx.showToast({
+        title:"查询中...",
+        icon:"loading"
+      })
+      wx.request({
+        url:app.globalData.mainurl+"jxdg",
+        data:{
+          info:app.globalData.stu_id.substring(0,7),
         },
         success(res){
           wx.hideToast({});
+          var i=0;
+          var result=[];
+          if(res.data.collegeone.length>res.data.collegetwo){
+            if(res.data.collegeone.length>res.data.collegethree.length){
+              i=res.data.collegeone.length;
+            }else{
+              i=res.data.collegethree.length
+            }
+          }else{
+            if(res.data.collegetwo.length>res.data.collegethree.length){
+              i=res.data.collegetwo.length;
+            }else{
+              i=res.data.collegethree.length;
+            }
+          }
+          if(i<res.data.collegefour.length){
+            i=res.data.collegefour.length
+          }
+          for(var n=0;n<i;n++){
+            result[n]={};
+            result[n].collegeone=res.data.collegeone[n]!=null?res.data.collegeone[n]:"";
+            result[n].collegetwo=res.data.collegetwo[n]!=null?res.data.collegetwo[n]:"";
+            result[n].collegethree=res.data.collegethree[n]!=null?res.data.collegethree[n]:"";
+            result[n].collegefour=res.data.collegefour[n]!=null?res.data.collegefour[n]:"";
+          }
           that.setData({
-            phone:res.data,
+            collegeCurr:result,
           })
         },
         fail(res){
           wx.showToast({
             title:"查询失败",
-            icon:'none',
+            icon:"none",
             duration:2000
           })
         }
       })
     }
-
     that.setData({
       curr: app.globalData.curr
     });

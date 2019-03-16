@@ -14,12 +14,11 @@
                     </view>
                 </view>
             </view>
-            <view style="height:100%;width:730rpx;display:flex;">
+            <view style="display:flex;opacity: 0.7;">
                 <view style="background-color:#f8f8f8;color:#666666;">
-                    <view wx:for="{{times}}" class="left {{item.class2}}">{{item.name}}</view>
+                    <view wx:for="{{times}}" class="left">{{item.name}}</view>
                 </view>
-                <view class="line_1" wx:for="12">
-                    <view class="line_2"></view>
+                <view class="line_1">
                     <view class="line_2"></view>
                     <view class="line_2"></view>
                     <view class="line_2"></view>
@@ -34,7 +33,7 @@
                 </view>
                 <!-- 课表 -->
                 <view wx:for="{{sw_kc}}">
-                    <view class="flex-item kcb-item {{item.bg}}" data-statu="open" style="margin-left:{{(item.xqj-1)*125+10}}rpx;margin-top:{{(item.skjc-1)*104+5}}rpx;height:{{item.skcd*100-10}}rpx;">
+                    <view class="flex-item kcb-item {{item.bg}}" data-statu="open" style="margin-left:{{(item.xqj-1)*125+15}}rpx;margin-top:{{(item.skjc-1)*104+18}}rpx;height:{{item.skcd*100-10}}rpx;">
                         <navigator url='lesson?kcmc={{item.kcmc}}&skdd={{item.skdd}}&teacher={{item.teacher}}&week_time={{item.xqj}}&day_time={{item.skjc}}-{{item.skjc+item.skcd-1}}&zhouci={{item.zhouci}}'>
                             <view class="smalltext">{{item.kcmc}}</view>
                             <view class="smalltext">{{item.skdd}}</view>
@@ -174,12 +173,30 @@
             <view class="th1">办公地点</view>
             <view class="th1">号码</view>
         </view>
-        <block wx:for="{{}}" wx:for-index="idx">
+        <block wx:for="{{phone}}" wx:for-index="idx">
             <view class="tr1">
-                <view class="td1">{{}}</view>
-                <view class="td1">{{}}</view>
-                <view class="td1">{{}}</view>
-                <view class="td1">{{}}</view>
+                <view class="td1">{{item.department}}</view>
+                <view class="td1">{{item.place}}</view>
+                <view class="td1">{{item.detailplace}}</view>
+                <view class="td1">{{item.phone}}</view>
+            </view>
+        </block>
+    </view>
+</block>
+<block wx:if="{{choose==7}}">
+    <view class="table1">
+        <view class="tr1 bg-w1">
+            <view class="th1">大一</view>
+            <view class="th1">大二</view>
+            <view class="th1">大三</view>
+            <view class="th1">大四</view>
+        </view>
+        <block wx:for="{{collegeCurr}}" wx:for-index="idx">
+            <view class="tr1">
+                <view class="td1">{{item.collegeone}}</view>
+                <view class="td1">{{item.collegetwo}}</view>
+                <view class="td1">{{item.collegethree}}</view>
+                <view class="td1">{{item.collegefour}}</view>
             </view>
         </block>
     </view>
