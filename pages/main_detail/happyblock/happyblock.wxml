@@ -1,6 +1,6 @@
 <view class="outview">
     <view class="purewall">
-        <image src="http://39.105.26.229:8080/111.png" />
+        <image src="https://fanrencli.cn/111.png" />
     </view>
     <view class="pureword" bindtap="biaobai">
         <text class="puretext">表白墙</text>
@@ -9,7 +9,7 @@
 </view>
 <view class="outview">
     <view class="purewall">
-        <image src="http://39.105.26.229:8080/2.png" />
+        <image src="https://fanrencli.cn/2.png" />
     </view>
     <view class="pureword" bindtap="qingshi">
         <text class="puretext1">今日趣事</text>

@@ -1,7 +1,7 @@
 
   /* pages/headLine/headLine.wxss */
   page{
-      background-image: url("http://39.105.26.229:8080/10.png")
+      background-image: url("https://fanrencli.cn/10.png")
   }
   /* .LJView{
     width: 100%;

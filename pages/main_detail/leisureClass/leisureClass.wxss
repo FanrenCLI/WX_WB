@@ -1,7 +1,7 @@
 /* pages/index/quary/jiaoshi.wxss */
 
 Page{
-  background-image: url("http://39.105.26.229:8080/11.png")
+  background-image: url("https://fanrencli.cn/11.png")
 }
   .section {
     background: #fff;

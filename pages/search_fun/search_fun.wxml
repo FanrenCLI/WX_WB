@@ -105,14 +105,12 @@
             <view class="meun-txt" hidden='{{ meunShow[0].isShows ? true : false }}'>
                 <view class='menu-text-list'>
                     <view class='menu-text-list-left over-auto'>
-                        <text wx:for="{{ areaLise }}" wx:key="name" class='meun-city-txt' bindtap="rowClick" data-hi="{{ index }}">
-                            {{ item.name }}
+                        <text wx:for="{{ areaLise }}" wx:key="name" class='meun-city-txt' bindtap="rowClick" data-hi="{{ index }}">{{ item.name }}
                         </text>
                     </view>
                     <view class='menu-text-list-rig over-auto' hidden='{{ rigShow ? true : fasle }}'>
                         <view class="menu-city" wx:for="{{rowLise}}" wx:for-index="index_1" hidden='{{ rowShow[index_1].isShows ? true : fasle }}'>
-                            <text wx:for="{{ item.name }}" class='meun-city-txt' wx:for-index="idx" bindtap="InputInfo" data-major="{{rowLise[index_1].name[idx]}}">
-                                {{rowLise[index_1].name[idx] }}
+                            <text wx:for="{{ item.name }}" class='meun-city-txt' wx:for-index="idx" bindtap="InputInfo" data-major="{{rowLise[index_1].name[idx]}}">{{rowLise[index_1].name[idx] }}
                             </text>
                         </view>
                     </view>

@@ -6,10 +6,10 @@ Page({
         currentTab: 0,
         content: [],
         count: 6,
-        content0: [{ title: "这是个标题", time: "2018-9-12", image: "http://39.105.26.229:8080/9.png",src:"http://39.105.26.229:8080/test.html" }],
-        content1: [{ title: "这是题", time: "2018-9-12", image: "http://39.105.26.229:8080/9.png" }],
-        content2: [{ title: "这题", time: "2018-9-12", image: "http://39.105.26.229:8080/9.png" }],
-        content3: [{ title: "题", time: "2018-9-12", image: "http://39.105.26.229:8080/9.png" }]
+        content0: [],
+        content1: [],
+        content2: [],
+        content3: []
     },
     boxlink: function (e) {
         wx.navigateTo({

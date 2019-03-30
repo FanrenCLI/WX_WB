@@ -1,6 +1,6 @@
 /* pages/search/search.wxss */
 .search{
-  background-image: url("http://39.105.26.229:8080/12.png");
+  background-image: url("https://fanrencli.cn/12.png");
     height:1500rpx;
     width:100%;
   }

@@ -1,10 +1,10 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/main/main",
     "pages/main_detail/more/more",
     "pages/search/search",
     "pages/search_fun/search_fun",
-    "pages/index/index",
     "pages/logs/logs",
     "pages/info_change/info_change",
     "pages/search_fun/lesson",

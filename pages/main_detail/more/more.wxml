@@ -5,9 +5,9 @@
 </view>
 <scroll-view scroll-y="{{true}}">
     <block wx:if="{{currentTab==0}}">
-        <image class="" src="http://39.105.26.229:8080/xl.png" mode="scaleFill"/>
+        <image class="" src="https://fanrencli.cn/xl.png" mode="scaleFill"/>
     </block>
     <block wx:if="{{currentTab==1}}">
-        <image class="" src="http://39.105.26.229:8080/xl.png" mode="scaleFill"/>
+        <image class="" src="https://fanrencli.cn/xl.png" mode="scaleFill"/>
     </block>
 </scroll-view>

@@ -67,7 +67,10 @@ Page({
   onLoad:function(res){
     var that=this;
     wx.request({
-      url:"http://wthrcdn.etouch.cn/weather_mini?city=南通",
+      url:"https://fanrencli.cn/weather_mini?city=南通",
+      data:{
+
+      },
       success(res){
         var backdata=res.data.data.forecast[0];
         var weather={};

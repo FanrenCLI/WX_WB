@@ -1,5 +1,5 @@
 page{
-    background-image: url("http://39.105.26.229:8080/9.png")
+    background-image: url("https://fanrencli.cn/9.png")
 }
 .tzlist{
     margin: 10rpx 10rpx 0rpx 10rpx ;

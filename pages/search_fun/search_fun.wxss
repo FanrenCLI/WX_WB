@@ -2,7 +2,7 @@
 @import '../../utils/copy.wxss';
 @import '../../utils/ripples.min.wxss';
 .card-box{
-  background-image: url("http://39.105.26.229:8080/1.png");
+  background-image: url("https://fanrencli.cn/1.png");
 }
 .line_1{
   position: absolute;

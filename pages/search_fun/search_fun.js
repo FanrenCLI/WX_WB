@@ -192,7 +192,7 @@ Page({
       success: function (res) {
         if (res.data.length == 0) {
           wx.showToast({
-            title: "查询失败",
+            title: "尚无老师信息",
             icon: "none",
             duration: 2000
           })
@@ -289,6 +289,7 @@ Page({
         break;
     };
     if (that.data.choose == "1" && that.data.sw_kc.length == 0) {
+      console.log(app.globalData.class)
       wx.request({
         url: app.globalData.mainurl + 'curr',
         method: "GET",
@@ -297,6 +298,7 @@ Page({
           classes: app.globalData.class
         },
         success: function (res) {
+          console.log(res.data);
           var colornum = 1;
           for (var i = 0; i < res.data.length; i++) {
             app.globalData.sw_kc[i] = {};

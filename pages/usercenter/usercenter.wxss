@@ -1,6 +1,6 @@
 /* pages/usercenter/usercenter.wxss */
 .back{
-  background-image: url("http://39.105.26.229:8080/timg.jpg")
+  background-image: url("https://fanrencli.cn/timg.jpg")
 }
 .userinfo {  
     position: relative;  
