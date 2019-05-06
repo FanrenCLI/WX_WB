@@ -37,6 +37,7 @@ let app =  getApp();
         })
       },
       downloadfile:function(e){
+        console.log(e.currentTarget.dataset.url)
         wx.downloadFile({
           // 示例 url，并非真实存在
           url: e.currentTarget.dataset.url,

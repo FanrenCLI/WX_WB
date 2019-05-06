@@ -1,0 +1,188 @@
+page{ 
+    display: flex; 
+    flex-direction: column; 
+    height: 100%; 
+    background-image: url("https://fanrencli.cn/3.png")
+  } 
+  image{
+      width: 100%;
+      height: 3000rpx;
+  }
+  .navbar{ 
+    flex: none; 
+    display: flex; 
+    background: rgb(255, 255, 255); 
+  } 
+  .navbar .item{ 
+    position: relative; 
+    flex: auto; 
+    text-align: center; 
+    line-height: 80rpx; 
+    font-size:14px;
+  } 
+  
+  /* 顶部导航字体颜色 */
+  .navbar .item.active{ 
+    color: #f0145a; 
+  } 
+  /* 顶部指示条属性 */
+  .navbar .item.active:after{ 
+    content: ""; 
+    display: block; 
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    right: 0; 
+    height: 6rpx; 
+    background: #e73535; 
+  }
+
+
+
+
+.section {
+    padding: 0rpx 10rpx;
+    margin: 10rpx 0rpx;
+    overflow:hidden;  
+    display: flex;
+   
+    border: 2px solid #fff;  
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);  
+    height: 200rpx;
+    background-color: floralwhite
+  }
+  .content-right{
+    margin-top: 10rpx;
+  }
+  .section_title {
+    margin-left: 20rpx;
+    font-size: 40rpx;
+    font-weight: 550;
+    line-height: 70rpx;
+    height: 70rpx;
+    width: 500rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .inside{
+    display: flex;
+    height: 45rpx;
+}
+.introduce{
+    display: flex;
+    height: 60rpx;
+    margin-left: 20rpx;
+    font-size: 30rpx;
+    color: darkgray;
+}
+  .price{
+    margin-left: 10rpx;
+    font-size: 40rpx;
+    font-weight: 550;
+    color: rgb(253, 1, 1);
+    width:200rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .sure{
+    height: 60rpx;
+    line-height: 60rpx;
+    width: 90rpx;
+    padding-left: 2rpx;
+    padding-right: 2rpx;
+    font-size: 28rpx;
+    color: rgb(37, 37, 37);
+    background-color:rgba(255, 23, 23, 0.753)
+}
+  .choose{
+      float: right;
+      height: 55rpx;
+      line-height: 55rpx;
+      border-radius: 27rpx;
+      width: 100rpx;
+      padding-left: 5rpx;
+      padding-right: 5rpx;
+      font-size: 28rpx;
+      color: rgb(37, 37, 37);
+      background-color:#ffd61e 
+  }
+  image{
+    margin-left: 15rpx;
+    margin-top: 10rpx;
+    width:180rpx;
+    height: 180rpx;
+
+}
+
+
+
+.menu{
+    background-color: #f4f4f4;
+    border-bottom:  solid #e9e9e9;
+    display: table;
+    width: 100%;
+  }
+  .menu-list{
+    justify-content: space-between;
+    display:table-cell ;
+    vertical-align: middle;
+    height: 75rpx;
+  }
+  .content{
+    display: flex;
+  }
+  .sum_price{
+      margin-top: 10rpx;
+      height: 30rpx;
+      width:300rpx;
+      line-height: 40rpx;
+      font-size: 35rpx;
+      font-weight: 550;
+      margin-left: 30rpx;
+
+  }
+  .seatnum{
+    margin-top: 10rpx;
+    height: 30rpx;
+    width:200rpx;
+    line-height: 40rpx;
+    font-size: 35rpx;
+    font-weight: 550;
+    margin-left: 30rpx;
+
+}
+  .pay{
+    height: 60rpx;
+    width: 120rpx;
+    padding:2rpx;
+    line-height: 60rpx;
+    margin-left: 5%;
+    font-size: 30rpx;
+  }
+  .content input{
+    width: 95%;
+    background-color: #ffffff;
+    height: 60rpx;
+    font-size: 30rpx;
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+  .recommend_title{
+    font-size: 35rpx;
+    color: rgb(0, 0, 0);
+    font-weight: 550;
+    text-align: center;
+    background-color: rgba(208, 255, 0, 0.329);
+    margin-left: auto;
+    margin-right: auto;
+    width:95%;
+    margin-top: 10rpx;
+    border: 2px solid #fff;  
+    border-radius: 15rpx;
+    height: 55rpx;
+    line-height: 55rpx;
+    box-shadow:inset 3px 3px 10px rgba(0, 0, 0, 0.2);  
+  }

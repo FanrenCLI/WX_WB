@@ -27,9 +27,9 @@ Page({
       "id": 3,
       "dis": ''
     }, {
-      "url": "../main_detail/wjdc/wjdc",
-      "img": "wenjuan.png",
-      "name": '问卷调查',
+      "url": "../main_detail/dining/dining",
+      "img": "canting.png",
+      "name": '校园食堂',
       "id": 4,
       "dis": ''
     }, {
@@ -69,12 +69,13 @@ Page({
     wx.request({
       url:"https://fanrencli.cn/weather_mini?city=南通",
       data:{
-
+ 
       },
       success(res){
         var backdata=res.data.data.forecast[0];
+        console.log(backdata);
         var weather={};
-        weather.date=backdata.date.substring(3);
+        weather.date=backdata.date.substring(backdata.date.indexOf("星"));
         weather.temperature=backdata.low.substring(3)+"~"+backdata.high.substring(3);
         weather.wind=backdata.fengxiang;
         weather.status=backdata.type;

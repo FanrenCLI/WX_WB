@@ -1,4 +1,7 @@
 /* pages/index/quary/jiaoshi.wxss */
+page{
+  background-image: url("https://fanrencli.cn/3.png")
+}
 .menu{
   background-color: #f4f4f4;
   border-bottom:  solid #e9e9e9;
@@ -81,5 +84,20 @@
     margin-top: 20rpx;
     width:110rpx;
     height: 110rpx;
-
-}
+  }
+  .recommend_title{
+    font-size: 35rpx;
+    color: rgb(0, 0, 0);
+    font-weight: 550;
+    text-align: center;
+    background-color: rgba(208, 255, 0, 0.329);
+    margin-left: auto;
+    margin-right: auto;
+    width:95%;
+    margin-top: 10rpx;
+    border: 2px solid #fff;  
+    border-radius: 15rpx;
+    height: 55rpx;
+    line-height: 55rpx;
+    box-shadow:inset 3px 3px 10px rgba(0, 0, 0, 0.2);  
+  }

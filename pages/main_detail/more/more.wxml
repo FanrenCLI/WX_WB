@@ -10,4 +10,12 @@
     <block wx:if="{{currentTab==1}}">
         <image class="" src="https://fanrencli.cn/xl.png" mode="scaleFill"/>
     </block>
+    <block wx:if="{{currentTab==2}}">
+        <block wx:for="{{wjlist}}">
+            <view class="tzlist" >
+                <text class="title">{{item.title}}</text>
+                <button class="btn" type="primary" data-src="{{item.src}}" bindtap="choosetest">参与</button>
+            </view>
+        </block>
+    </block>
 </scroll-view>

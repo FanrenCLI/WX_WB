@@ -1,5 +1,0 @@
-let app =  getApp();
-
-Page({
-    
-})

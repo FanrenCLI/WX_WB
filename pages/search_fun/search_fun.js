@@ -9,6 +9,7 @@ Page({
    */
   data: {
     choose: "1",
+    testinfo:1,
     currentIndex: 0,
     cardRightIn: false,
     cardLeftIn: false,
@@ -102,7 +103,8 @@ Page({
       success(res) {
         var locationInfo = res;
         wx.request({
-          url: app.globalData.mainurl + "/attendInfo",
+          // url: app.globalData.mainurl + "/attendInfo",
+          url:app.globalData.mainurl+"/attendtest",
           data: {
             code: that.data.attendcode,
             id: app.globalData.stu_id,
@@ -112,13 +114,28 @@ Page({
             lat: locationInfo.latitude,
             lon: locationInfo.longitude,
             major: app.globalData.major,
+            testinfo:that.data.testinfo,
           },
           success(res) {
+            var testinfo=that.data.testinfo;
             if (res.data.length != 0) {
               that.setData({
                 attendInfo: res.data
               });
+              wx.showToast({
+                title: "考勤结束",
+                icon: "none",
+                duration: 2000
+              });
+            }else{
+              wx.showToast({
+                title: "开始考勤",
+                icon: "none",
+                duration: 2000
+              });
             }
+            that.data.testinfo=testinfo+1;
+            
           },
           fail(res) {
             wx.showToast({
@@ -371,33 +388,33 @@ Page({
     }
     //学生查询考勤信息
     if (that.data.choose == "3") {
-      wx.request({
-        url: app.globalData.mainurl + "attend",
-        data: {
-          stuid: app.globalData.stu_id
-        },
-        method: "GET",
-        success: function (res) {
-          if (res.data.length == 0) {
-            wx.showToast({
-              title: "查询失败",
-              icon: "none",
-              duration: 2000
-            })
-          } else {
-            that.setData({
-              attendInfo: res.data
-            });
-          }
-        },
-        fail(res) {
-          wx.showToast({
-            title: "查询失败",
-            icon: "none",
-            duration: 2000
-          })
-        }
-      });
+      // wx.request({
+      //   url: app.globalData.mainurl + "attend",
+      //   data: {
+      //     stuid: app.globalData.stu_id
+      //   },
+      //   method: "GET",
+      //   success: function (res) {
+      //     if (res.data.length == 0) {
+      //       wx.showToast({
+      //         title: "查询失败",
+      //         icon: "none",
+      //         duration: 2000
+      //       })
+      //     } else {
+      //       that.setData({
+      //         attendInfo: res.data
+      //       });
+      //     }
+      //   },
+      //   fail(res) {
+      //     wx.showToast({
+      //       title: "查询失败",
+      //       icon: "none",
+      //       duration: 2000
+      //     })
+      //   }
+      // });
     }
     //加载院系和专业的信息，用于选择
     if (that.data.choose == "4") {

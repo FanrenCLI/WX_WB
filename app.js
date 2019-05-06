@@ -24,7 +24,7 @@ App({
         // qq: "1242229486",
         // wx: "yishijiezhillin"
         userInfo: null,
-        mainurl:"https://fanrencli.cn/",
+        mainurl:"http://localhost:8080/",
         change_info: { id: "", info: "" },
         name: "",
         ID: "",

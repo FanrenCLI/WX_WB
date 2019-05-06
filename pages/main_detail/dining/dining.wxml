@@ -1,0 +1,178 @@
+<view class="navbar">
+    <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" 
+    wx:key="unique" bindtap="navbarTap">{{item}}
+    </text>
+</view>
+<scroll-view scroll-y="{{true}}">
+    <block wx:if="{{currentTab==0}}">
+        <scroll-view scroll-y="{{true}}" style="width:100%">
+            <view class="recommend_title">为你推荐</view>
+            <block wx:for="{{persondining}}" wx:for-index="index">
+                <view class="section" >
+                    <image src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1554985067&di=dd439f61b070f6a543887ad7a7d926b1&src=http://img.pconline.com.cn/images/upload/upc/tx/photoblog/1312/11/c0/29510695_29510695_1386708882473.jpg" />
+                    <view class="content-right">
+                        <view class = "section_title">{{item.title}}</view>
+                        <view class="introduce">{{item.content}}</view>
+                        <view class="inside">
+                            <view class="price">￥{{item.price}}</view>
+                            <button class="choose" data-price="{{item.price}}" data-title="{{item.title}}" data-content="{{item.content}}" bindtap="chooseitem">选择</button>
+                        </view>
+                    </view>  
+                </view>
+            </block>
+            <view class="recommend_title">本周新品</view>
+            <block wx:for="{{weeklydining}}" wx:for-index="index">
+                <view class="section" >
+                    <image src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1554985067&di=dd439f61b070f6a543887ad7a7d926b1&src=http://img.pconline.com.cn/images/upload/upc/tx/photoblog/1312/11/c0/29510695_29510695_1386708882473.jpg" />
+                    <view class="content-right">
+                        <view class = "section_title">{{item.title}}</view>
+                        <view class="introduce">{{item.content}}</view>
+                        <view class="inside">
+                            <view class="price">￥{{item.price}}</view>
+                            <button class="choose" data-price="{{item.price}}" data-title="{{item.title}}" data-content="{{item.content}}" bindtap="chooseitem">选择</button>
+                        </view>
+                    </view>
+                </view>
+            </block>
+            <view class="recommend_title">菜单列表</view>
+            <block wx:for="{{contentlist}}" wx:for-index="index">
+                <view class="section" >
+                    <image src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1554985067&di=dd439f61b070f6a543887ad7a7d926b1&src=http://img.pconline.com.cn/images/upload/upc/tx/photoblog/1312/11/c0/29510695_29510695_1386708882473.jpg" />
+                    <view class="content-right">
+                        <view class = "section_title">{{item.title}}</view>
+                        <view class="introduce">{{item.content}}</view>
+                        <view class="inside">
+                            <view class="price">￥{{item.price}}</view>
+                            <button class="choose" data-price="{{item.price}}" data-title="{{item.title}}" data-content="{{item.content}}" bindtap="chooseitem">选择</button>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </scroll-view>
+    </block>
+    <block wx:if="{{currentTab==1}}">
+        <scroll-view scroll-y="{{true}}" style="width:100%">
+            <view class="recommend_title">为你推荐</view>
+            <block wx:for="{{persondining1}}" wx:for-index="index">
+                <view class="section" >
+                    <image src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1554985067&di=dd439f61b070f6a543887ad7a7d926b1&src=http://img.pconline.com.cn/images/upload/upc/tx/photoblog/1312/11/c0/29510695_29510695_1386708882473.jpg" />
+                    <view class="content-right">
+                        <view class = "section_title">{{item.title}}</view>
+                        <view class="introduce">{{item.content}}</view>
+                        <view class="inside">
+                            <view class="price">￥{{item.price}}</view>
+                            <button class="choose" data-price="{{item.price}}" data-title="{{item.title}}" data-content="{{item.content}}" bindtap="chooseitem">选择</button>
+                        </view>
+                    </view>
+                </view>
+            </block>
+            <view class="recommend_title">本周新品</view>
+            <block wx:for="{{weeklydining1}}" wx:for-index="index">
+                <view class="section" >
+                    <image src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1554985067&di=dd439f61b070f6a543887ad7a7d926b1&src=http://img.pconline.com.cn/images/upload/upc/tx/photoblog/1312/11/c0/29510695_29510695_1386708882473.jpg" />
+                    <view class="content-right">
+                        <view class = "section_title">{{item.title}}</view>
+                        <view class="introduce">{{item.content}}</view>
+                        <view class="inside">
+                            <view class="price">￥{{item.price}}</view>
+                            <button class="choose" data-price="{{item.price}}" data-title="{{item.title}}" data-content="{{item.content}}" bindtap="chooseitem">选择</button>
+                        </view>
+                    </view>
+                </view>
+            </block>
+            <view class="recommend_title">菜单列表</view>
+            <block wx:for="{{contentlist1}}">
+                <view class="section" >
+                    <image src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1554985067&di=dd439f61b070f6a543887ad7a7d926b1&src=http://img.pconline.com.cn/images/upload/upc/tx/photoblog/1312/11/c0/29510695_29510695_1386708882473.jpg" />
+                    <view class="content-right">
+                        <view class = "section_title">{{item.title}}</view>
+                        <view class="introduce">{{item.content}}</view>
+                        <view class="inside">
+                            <view class="price">￥{{item.price}}</view>
+                            <button class="choose" data-price="{{item.price}}" data-title="{{item.title}}" data-content="{{item.content}}" bindtap="chooseitem">选择</button>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </scroll-view>
+    </block>
+    <block wx:if="{{currentTab==2}}">
+        <scroll-view scroll-y="{{true}}" style="width:100%">
+            <view class="recommend_title">为你推荐</view>
+            <block wx:for="{{persondining2}}" wx:for-index="index">
+                <view class="section" >
+                    <image src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1554985067&di=dd439f61b070f6a543887ad7a7d926b1&src=http://img.pconline.com.cn/images/upload/upc/tx/photoblog/1312/11/c0/29510695_29510695_1386708882473.jpg" />
+                    <view class="content-right">
+                        <view class = "section_title">{{item.title}}</view>
+                        <view class="introduce">{{item.content}}</view>
+                        <view class="inside">
+                            <view class="price">￥{{item.price}}</view>
+                            <button class="choose" data-price="{{item.price}}" data-title="{{item.title}}" data-content="{{item.content}}" bindtap="chooseitem">选择</button>
+                        </view>
+                    </view>
+                </view>
+            </block>
+            <view class="recommend_title">本周新品</view>
+            <block wx:for="{{weeklydining2}}" wx:for-index="index">
+                <view class="section" >
+                    <image src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1554985067&di=dd439f61b070f6a543887ad7a7d926b1&src=http://img.pconline.com.cn/images/upload/upc/tx/photoblog/1312/11/c0/29510695_29510695_1386708882473.jpg" />
+                    <view class="content-right">
+                        <view class = "section_title">{{item.title}}</view>
+                        <view class="introduce">{{item.content}}</view>
+                        <view class="inside">
+                            <view class="price">￥{{item.price}}</view>
+                            <button class="choose" data-price="{{item.price}}" data-title="{{item.title}}" data-content="{{item.content}}" bindtap="chooseitem">选择</button>
+                        </view>
+                    </view>
+                </view>
+            </block>
+            <view class="recommend_title">菜单列表</view>
+            <block wx:for="{{contentlist2}}">
+                <view class="section" >
+                    <image src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1554985067&di=dd439f61b070f6a543887ad7a7d926b1&src=http://img.pconline.com.cn/images/upload/upc/tx/photoblog/1312/11/c0/29510695_29510695_1386708882473.jpg" />
+                    <view class="content-right">
+                        <view class = "section_title">{{item.title}}</view>
+                        <view class="introduce">{{item.content}}</view>
+                        <view class="inside">
+                            <view class="price">￥{{item.price}}</view>
+                            <button class="choose" data-price="{{item.price}}" data-title="{{item.title}}" data-content="{{item.content}}" bindtap="chooseitem">选择</button>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </scroll-view>
+    </block>
+    <block wx:if="{{currentTab==3}}">
+        <view class='menu'>
+            <view class='menu-list'>
+                <view class="content">
+                    <view class="sum_price">总价:￥{{sum_price}}</view>
+                    <view class="seatnum">座位号:{{seatnum}}</view>
+                    <button class="pay" type="warn" bindtap="surechoose">下单</button>
+                </view>
+            </view>
+        </view>
+        <view class='menu'>
+            <view class='menu-list'>
+                <view class="content">
+                    <input type="text" placeholder="饮食偏好或备注"  bindinput="infoInput" />
+                </view>
+            </view>
+        </view>
+        <scroll-view scroll-y="{{true}}" style="width:100%">
+            <block wx:for="{{contentlist3}}">
+                <view class="section" >
+                    <image src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1554985067&di=dd439f61b070f6a543887ad7a7d926b1&src=http://img.pconline.com.cn/images/upload/upc/tx/photoblog/1312/11/c0/29510695_29510695_1386708882473.jpg" />
+                    <view class="content-right">
+                        <view class = "section_title">{{item.title}}</view>
+                        <view class="introduce">{{item.content}}</view>
+                        <view class="inside">
+                            <view class="price">{{item.price}}</view>
+                            <button class="choose"data-price="{{item.price}}" data-index="{{index}}"  bindtap="deletTap">删除</button>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </scroll-view>
+    </block>
+</scroll-view>

@@ -7,16 +7,59 @@
     </view>
 </view>
 <scroll-view scroll-y="{{true}}" style="width:100%">
-    <block wx:for="{{videolist}}">
-        <view class="section" bindtap="choosevideo" data-src="{{item.src}}" data-time="{{item.time}}" data-auth="{{item.auth}}" data-title="{{item.title}}">
-            <image src="../../../image/myvideo.png" />
-            <view class="content-right">
-                <view class="section_title">{{item.title}}</view>
-                <view class="inside">
-                    <view class="auth">作者:{{item.auth}}</view>
-                    <view class="time">日期:{{item.time}}</view>
+    <block wx:if="{{flag==0}}">
+        <view class="recommend_title">为你推荐</view>
+            <block wx:for="{{personvideo}}">
+                <view class="section" bindtap="choosevideo" data-src="{{item.src}}" data-time="{{item.time}}" data-auth="{{item.auth}}" data-title="{{item.title}}">
+                    <image src="../../../image/myvideo.png" />
+                    <view class="content-right">
+                        <view class="section_title">{{item.title}}</view>
+                        <view class="inside">
+                            <view class="auth">作者:{{item.auth}}</view>
+                            <view class="time">日期:{{item.time}}</view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        <view class="recommend_title">本周热点</view>
+        <block wx:for="{{weeklyvideo}}">
+                <view class="section" bindtap="choosevideo" data-src="{{item.src}}" data-time="{{item.time}}" data-auth="{{item.auth}}" data-title="{{item.title}}">
+                    <image src="../../../image/myvideo.png" />
+                    <view class="content-right">
+                        <view class="section_title">{{item.title}}</view>
+                        <view class="inside">
+                            <view class="auth">作者:{{item.auth}}</view>
+                            <view class="time">日期:{{item.time}}</view>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        <view class="recommend_title">最近更新</view>
+        <block wx:for="{{videolist}}">
+            <view class="section" bindtap="choosevideo" data-src="{{item.src}}" data-time="{{item.time}}" data-auth="{{item.auth}}" data-title="{{item.title}}">
+                <image src="../../../image/myvideo.png" />
+                <view class="content-right">
+                    <view class="section_title">{{item.title}}</view>
+                    <view class="inside">
+                        <view class="auth">作者:{{item.auth}}</view>
+                        <view class="time">日期:{{item.time}}</view>
+                    </view>
                 </view>
             </view>
-        </view>
+        </block>
+    </block>
+    <block wx:else>
+        <block  wx:for="{{videolist}}">
+            <view class="section" bindtap="choosevideo" data-src="{{item.src}}" data-time="{{item.time}}" data-auth="{{item.auth}}" data-title="{{item.title}}">
+                <image src="../../../image/myvideo.png" />
+                <view class="content-right">
+                    <view class="section_title">{{item.title}}</view>
+                    <view class="inside">
+                        <view class="auth">作者:{{item.auth}}</view>
+                        <view class="time">日期:{{item.time}}</view>
+                    </view>
+                </view>
+            </view>
+        </block>
     </block>
 </scroll-view>
